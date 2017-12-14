@@ -1,2 +1,3 @@
-# Acid
-Apple Pay like holographic effect
+# Holographic
+
+Holographic Effect (inspired by Apple Pay)
