@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +20,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-8i-2nP" customClass="HolographicView" customModule="Holographic">
-                                <rect key="frame" x="87.5" y="213.5" width="200" height="240"/>
+                                <rect key="frame" x="24" y="137.5" width="327" height="392"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="8iO-t7-B7J"/>
-                                    <constraint firstAttribute="height" constant="240" id="ztw-Kd-BC0"/>
+                                    <constraint firstAttribute="width" secondItem="CB5-8i-2nP" secondAttribute="height" multiplier="200:240" id="uLU-MO-8Mf"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="CB5-8i-2nP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="2sG-XQ-6Nq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CB5-8i-2nP" secondAttribute="trailing" constant="24" id="DmF-8q-Jla"/>
                             <constraint firstItem="CB5-8i-2nP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="izb-7h-beT"/>
                             <constraint firstItem="CB5-8i-2nP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uEA-ik-C0T"/>
                         </constraints>
