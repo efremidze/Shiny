@@ -11,10 +11,9 @@ import CoreMotion
 
 open class HolographicView: UIView {
     public let contentView = UIView()
-    private let motionManager = CMMotionManager()
-    open let imageView = UIImageView()
-//    private let gradient = CAGradientLayer()
+    public let imageView = UIImageView()
     private let gradient = RadialGradientLayer()
+    private let motionManager = CMMotionManager()
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,8 +24,7 @@ open class HolographicView: UIView {
         
         gradient.needsDisplayOnBoundsChange = true
         gradient.frame = self.bounds.insetBy(dx: -self.bounds.width * CGFloat(UIColor.all.count), dy: -self.bounds.height * CGFloat(UIColor.all.count))
-        print(gradient.frame)
-        gradient.colors = UIColor.all.map { $0.cgColor } + UIColor.all.reversed().map { $0.cgColor }
+        gradient.colors = UIColor.all.map { $0.cgColor }
         contentView.layer.addSublayer(gradient)
         
         imageView.frame = self.bounds
@@ -38,9 +36,8 @@ open class HolographicView: UIView {
             guard let `self` = self, let data = data else { return }
             
             func getPosition(_ position: Double) -> CGFloat {
-                let multiplier: Double = 0.5
-                let offset: Double = 0.03
-                print(0.5 + (position * multiplier / 0.5))
+                let multiplier: Double = 0.25
+                let offset: Double = 0.025
                 return CGFloat(max(offset, min(0.5 - (position * multiplier / 0.5), 1 - offset)))
             }
             
@@ -54,9 +51,6 @@ class RadialGradientLayer: CALayer {
     var colors = [CGColor]()
     override func draw(in ctx: CGContext) {
         ctx.saveGState()
-//        let colorSpace = CGColorSpaceCreateDeviceRGB()
-//        let locations: [CGFloat] = [0.0, 1.0]
-//        guard let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: locations) else { return  }
         guard let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: nil) else { return  }
         let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         ctx.drawRadialGradient(gradient, startCenter: center, startRadius: 0, endCenter: center, endRadius: radius, options: .drawsBeforeStartLocation)
@@ -67,10 +61,6 @@ extension CALayer {
     var radius: CGFloat {
         return sqrt(pow(bounds.width / 2, 2) + pow(bounds.height / 2, 2))
     }
-//    var center: CGPoint {
-//        get { return CGPoint(x: position.x + (bounds.width / 2), y: position.y + (bounds.height / 2)) }
-//        set { position = CGPoint(x: newValue.x - (bounds.width / 2), y: newValue.y - (bounds.height / 2)) }
-//    }
 }
 
 extension UIColor {
@@ -85,5 +75,5 @@ extension UIColor {
     class var blue: UIColor { return UIColor(red: 0, green: 122, blue: 255) }
     class var purple: UIColor { return UIColor(red: 88, green: 86, blue: 214) }
     class var pink: UIColor { return UIColor(red: 255, green: 45, blue: 85) }
-    class var all: [UIColor] { return [red, orange, yellow, green, tealBlue, blue, purple, pink] }
+    static let all: [UIColor] = [red, orange, yellow, green, tealBlue, blue, purple, pink]
 }
