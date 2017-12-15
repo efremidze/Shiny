@@ -23,29 +23,18 @@ class ViewController: UIViewController {
             holographicView.layer.cornerRadius = 20
             holographicView.contentView.layer.cornerRadius = 20
             
-            holographicView.addParallax()
+            let group = UIMotionEffectGroup()
+            group.motionEffects = [
+                UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis, span: 20),
+                UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis, span: 20)
+            ]
+            holographicView.addMotionEffect(group)
         }
     }
     
 }
 
-extension HolographicView {
-    func addParallax() {
-        let amount = 20
-        
-        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        horizontal.minimumRelativeValue = -amount
-        horizontal.maximumRelativeValue = amount
-        
-        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        vertical.minimumRelativeValue = -amount
-        vertical.maximumRelativeValue = amount
-        
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [horizontal, vertical]
-        self.addMotionEffect(group)
-    }
-}
+// MARK: Effects
 
 extension HolographicView {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -70,9 +59,17 @@ extension HolographicView {
     }
     func animate(didEnter: Bool) {
         if didEnter {
-            UIView.animate(withDuration: 0.2, animations: { self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95) })
+            UIView.animate(withDuration: 0.2) { self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95) }
         } else {
-            UIView.animate(withDuration: 0.2, animations: { self.transform = .identity })
+            UIView.animate(withDuration: 0.2) { self.transform = .identity }
         }
+    }
+}
+
+extension UIInterpolatingMotionEffect {
+    convenience init(keyPath: String, type: UIInterpolatingMotionEffectType, span: Int) {
+        self.init(keyPath: keyPath, type: type)
+        self.minimumRelativeValue = -span
+        self.maximumRelativeValue = span
     }
 }
