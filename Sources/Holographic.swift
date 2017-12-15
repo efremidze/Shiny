@@ -37,7 +37,7 @@ open class HolographicView: UIView {
             
             func getPosition(_ position: Double) -> CGFloat {
                 let multiplier: Double = 0.25
-                let offset: Double = 0.025
+                let offset: Double = 0.03
                 return CGFloat(max(offset, min(0.5 - (position * multiplier / 0.5), 1 - offset)))
             }
             
@@ -51,7 +51,7 @@ class RadialGradientLayer: CALayer {
     var colors = [CGColor]()
     override func draw(in ctx: CGContext) {
         ctx.saveGState()
-        guard let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: nil) else { return  }
+        guard let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: nil) else { return }
         let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         ctx.drawRadialGradient(gradient, startCenter: center, startRadius: 0, endCenter: center, endRadius: radius, options: .drawsBeforeStartLocation)
     }
