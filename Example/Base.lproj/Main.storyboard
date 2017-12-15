@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-8i-2nP" customClass="HolographicView" customModule="Holographic">
-                                <rect key="frame" x="50" y="269.5" width="275" height="128"/>
+                                <rect key="frame" x="87.5" y="213.5" width="200" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ztw-Kd-BC0"/>
+                                    <constraint firstAttribute="width" constant="200" id="8iO-t7-B7J"/>
+                                    <constraint firstAttribute="height" constant="240" id="ztw-Kd-BC0"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CB5-8i-2nP" secondAttribute="trailing" constant="50" id="DuU-H7-2Uz"/>
-                            <constraint firstItem="CB5-8i-2nP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="pUJ-NG-0hf"/>
+                            <constraint firstItem="CB5-8i-2nP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="izb-7h-beT"/>
                             <constraint firstItem="CB5-8i-2nP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uEA-ik-C0T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
