@@ -8,7 +8,7 @@
         "center" : {
           "mode" : "tile",
           "width" : 10,
-          "height" : 10
+          "height" : 239
         },
         "cap-insets" : {
           "bottom" : 0,
