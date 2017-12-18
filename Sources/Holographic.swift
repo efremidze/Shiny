@@ -11,7 +11,6 @@ import CoreMotion
 
 @IBDesignable
 open class HolographicView: UIView {
-    @IBInspectable
     public let contentView = UIView()
     public let imageView = UIImageView()
     private let gradient = RadialGradientLayer()
