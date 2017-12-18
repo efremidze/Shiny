@@ -10,33 +10,39 @@ import UIKit
 import Holographic
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var holographicView: HolographicView! {
+    @IBOutlet weak var containerView: ContainerView! {
         didSet {
-            holographicView.imageView.image = #imageLiteral(resourceName: "pattern")
-            holographicView.imageView.contentMode = .scaleToFill
-            
-            holographicView.layer.shadowOpacity = 0.6
-            holographicView.layer.shadowColor = UIColor.gray.cgColor
-            holographicView.layer.shadowOffset = .zero
-            holographicView.layer.shadowRadius = 14
-            holographicView.layer.cornerRadius = 20
-            holographicView.contentView.layer.cornerRadius = 20
+            containerView.layer.shadowOpacity = 0.6
+            containerView.layer.shadowColor = UIColor.gray.cgColor
+            containerView.layer.shadowOffset = .zero
+            containerView.layer.shadowRadius = 14
+            containerView.layer.cornerRadius = 20
             
             let group = UIMotionEffectGroup()
             group.motionEffects = [
                 UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis, span: 20),
                 UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis, span: 20)
             ]
-            holographicView.addMotionEffect(group)
+            containerView.addMotionEffect(group)
         }
     }
-    
+    @IBOutlet weak var holographicView: HolographicView! {
+        didSet {
+            holographicView.layer.cornerRadius = 20
+            holographicView.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.image = #imageLiteral(resourceName: "pattern")
+            imageView.contentMode = .scaleToFill
+        }
+    }
 }
 
 // MARK: Effects
 
-extension HolographicView {
+class ContainerView: UIView {
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         animate(didEnter: true)
     }

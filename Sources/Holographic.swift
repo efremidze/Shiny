@@ -11,25 +11,16 @@ import CoreMotion
 
 @IBDesignable
 open class HolographicView: UIView {
-    public let contentView = UIView()
-    public let imageView = UIImageView()
     private let gradient = RadialGradientLayer()
     private let motionManager = CMMotionManager()
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        contentView.frame = self.bounds
-        contentView.layer.masksToBounds = true
-        self.addSubview(contentView)
-        
         gradient.needsDisplayOnBoundsChange = true
         gradient.frame = self.bounds.insetBy(dx: -self.bounds.width * CGFloat(UIColor.all.count), dy: -self.bounds.height * CGFloat(UIColor.all.count))
         gradient.colors = UIColor.all.map { $0.cgColor }
-        contentView.layer.addSublayer(gradient)
-        
-        imageView.frame = self.bounds
-        contentView.addSubview(imageView)
+        self.layer.insertSublayer(gradient, at: 0)
         
         guard motionManager.isDeviceMotionAvailable else { return }
         motionManager.deviceMotionUpdateInterval = 0.1
@@ -55,6 +46,12 @@ class RadialGradientLayer: CALayer {
         guard let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: nil) else { return }
         let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         ctx.drawRadialGradient(gradient, startCenter: center, startRadius: 0, endCenter: center, endRadius: radius, options: .drawsBeforeStartLocation)
+    }
+}
+
+class RadialGradientView: UIView {
+    override class var layerClass: AnyClass {
+        return RadialGradientLayer.self
     }
 }
 
