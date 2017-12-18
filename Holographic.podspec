@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Holographic'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Holographic Effect (inspired by Apple Pay)'
   s.homepage         = 'https://github.com/efremidze/Holographic'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
