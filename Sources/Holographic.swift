@@ -9,6 +9,7 @@
 import Foundation
 import CoreMotion
 
+@IBDesignable
 open class HolographicView: UIView {
     public let contentView = UIView()
     public let imageView = UIImageView()

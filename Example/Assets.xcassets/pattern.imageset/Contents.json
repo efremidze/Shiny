@@ -8,7 +8,7 @@
         "center" : {
           "mode" : "tile",
           "width" : 10,
-          "height" : 239
+          "height" : 240
         },
         "cap-insets" : {
           "bottom" : 0,
@@ -22,8 +22,5 @@
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }
