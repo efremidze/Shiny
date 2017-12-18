@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var holographicView: HolographicView! {
         didSet {
-            holographicView.imageView.image = UIImage(named: "pattern")
+            holographicView.imageView.image = #imageLiteral(resourceName: "pattern")
             holographicView.imageView.contentMode = .scaleToFill
             
             holographicView.layer.shadowOpacity = 0.6
