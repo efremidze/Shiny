@@ -25,11 +25,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-8i-2nP" customClass="HolographicView" customModule="Holographic">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="392"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SOQ-9X-BSh">
-                                                <rect key="frame" x="0.0" y="0.0" width="319" height="344"/>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72D-ji-Vck">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="52.5"/>
+                                                <rect key="frame" x="0.0" y="-0.5" width="327" height="52.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-71-lFd">
                                                         <rect key="frame" x="16" y="16" width="295" height="20.5"/>
@@ -46,8 +43,8 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz1-uP-j3E">
-                                                                <rect key="frame" x="274" y="0.0" width="21" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="273" y="0.0" width="22" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -62,14 +59,17 @@
                                                     <constraint firstAttribute="trailing" secondItem="5uU-71-lFd" secondAttribute="trailing" constant="16" id="rrt-J8-pKy"/>
                                                 </constraints>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SOQ-9X-BSh">
+                                                <rect key="frame" x="0.0" y="200" width="327" height="392"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="72D-ji-Vck" firstAttribute="leading" secondItem="CB5-8i-2nP" secondAttribute="leading" id="4dJ-Eh-YHZ"/>
+                                            <constraint firstItem="SOQ-9X-BSh" firstAttribute="top" secondItem="72D-ji-Vck" secondAttribute="bottom" id="CSa-1o-wgj"/>
                                             <constraint firstAttribute="trailing" secondItem="SOQ-9X-BSh" secondAttribute="trailing" id="Gsd-BU-xkI"/>
                                             <constraint firstItem="72D-ji-Vck" firstAttribute="top" secondItem="CB5-8i-2nP" secondAttribute="top" id="Rl4-gy-jea"/>
                                             <constraint firstItem="SOQ-9X-BSh" firstAttribute="leading" secondItem="CB5-8i-2nP" secondAttribute="leading" id="VbD-Yz-03C"/>
-                                            <constraint firstItem="SOQ-9X-BSh" firstAttribute="top" secondItem="CB5-8i-2nP" secondAttribute="top" id="feb-4b-pn1"/>
                                             <constraint firstAttribute="bottom" secondItem="SOQ-9X-BSh" secondAttribute="bottom" id="pe5-ld-lAZ"/>
                                             <constraint firstAttribute="trailing" secondItem="72D-ji-Vck" secondAttribute="trailing" id="rmk-ZW-dti"/>
                                         </constraints>
