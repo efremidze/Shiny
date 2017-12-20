@@ -9,7 +9,7 @@
 import UIKit
 import CoreMotion
 
-@IBDesignable
+//@IBDesignable
 open class HolographicView: UIView {
     
     private lazy var gradientLayer: RadialGradientLayer = {
@@ -19,8 +19,6 @@ open class HolographicView: UIView {
         return gradientLayer
     }()
     
-    private let motionManager = CMMotionManager()
-    
     open var colors = [UIColor]() {
         didSet {
             gradientLayer.colors = colors.map { $0.cgColor }
@@ -28,22 +26,26 @@ open class HolographicView: UIView {
         }
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        guard motionManager.isDeviceMotionAvailable else { return }
-        motionManager.deviceMotionUpdateInterval = 0.1
-        motionManager.startDeviceMotionUpdates(to: OperationQueue.current!) { [weak self] data, error in
-            guard let `self` = self, let data = data else { return }
-            
-            func getPosition(_ position: Double) -> CGFloat {
-                let multiplier: Double = 0.25
-                let offset: Double = 0.03
+    var targetValue: CGVector = .zero {
+        didSet {
+            func getPosition(_ position: CGFloat) -> CGFloat {
+                let multiplier: CGFloat = 0.25
+                let offset: CGFloat = 0.03
                 return CGFloat(max(offset, min(0.5 - (position * multiplier / 0.5), 1 - offset)))
             }
             
-            self.gradientLayer.anchorPoint.x = getPosition(data.gravity.x)
-            self.gradientLayer.anchorPoint.y = getPosition(data.gravity.y)
+            self.gradientLayer.anchorPoint.x = getPosition(targetValue.dx)
+            self.gradientLayer.anchorPoint.y = getPosition(targetValue.dy)
+        }
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        guard Gyro.isDeviceMotionAvailable else { return }
+        Gyro.deviceMotionUpdateInterval = 0.1
+        Gyro.observe { [weak self] vector in
+            self?.targetValue = vector
         }
     }
     
@@ -68,5 +70,21 @@ class RadialGradientLayer: CALayer {
 extension CALayer {
     var radius: CGFloat {
         return sqrt(pow(bounds.width / 2, 2) + pow(bounds.height / 2, 2))
+    }
+}
+
+let Gyro = GyroManager.shared
+
+class GyroManager: CMMotionManager {
+    static let shared = GyroManager()
+    private let queue = OperationQueue()
+    func observe(_ observer: @escaping (_ gyro: CGVector) -> Void) {
+        startDeviceMotionUpdates(to: queue) { data, error in
+            guard let data = data else { return }
+            
+            DispatchQueue.main.sync {
+                observer(CGVector(dx: CGFloat(data.gravity.x), dy: CGFloat(data.gravity.y)))
+            }
+        }
     }
 }

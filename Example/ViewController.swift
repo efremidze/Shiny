@@ -35,8 +35,9 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var imageView: UIImageView! {
         didSet {
-            imageView.image = #imageLiteral(resourceName: "pattern")
-            imageView.contentMode = .scaleToFill
+            imageView.image = #imageLiteral(resourceName: "pattern2")
+            imageView.contentMode = .scaleAspectFill
+            imageView.tintColor = .background
         }
     }
 }
@@ -93,5 +94,6 @@ extension UIColor {
     class var blue: UIColor { return UIColor(red: 0, green: 122, blue: 255) }
     class var purple: UIColor { return UIColor(red: 88, green: 86, blue: 214) }
     class var pink: UIColor { return UIColor(red: 255, green: 45, blue: 85) }
+    class var background: UIColor { return UIColor(red: 17, green: 17, blue: 17) }
     static let all: [UIColor] = [red, orange, yellow, green, tealBlue, blue, purple, pink]
 }
