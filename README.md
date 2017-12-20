@@ -24,6 +24,10 @@
 
 Holographic Effect (inspired by Apple Pay)
 
+<img src="https://thumbs.gfycat.com/AccurateFakeEuropeanpolecat-size_restricted.gif" width="320">
+
+[Demo Video](https://gfycat.com/gifs/detail/AccurateFakeEuropeanpolecat)
+
 ```
 $ pod try Holographic
 ```

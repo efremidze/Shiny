@@ -40,6 +40,16 @@ class ViewController: UIViewController {
             imageView.tintColor = .background
         }
     }
+    @IBOutlet weak var textLabel: UILabel! {
+        didSet {
+            textLabel.attributedText = {
+                let string = NSMutableAttributedString(string: "Pay", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .medium)])
+                string.append(NSAttributedString(string: " ", attributes: [.font: UIFont.systemFont(ofSize: 10)]))
+                string.append(NSAttributedString(string: "Cash", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .light)]))
+                return string
+            }()
+        }
+    }
 }
 
 // MARK: Effects
