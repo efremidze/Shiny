@@ -26,29 +26,29 @@
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="191"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72D-ji-Vck">
-                                                <rect key="frame" x="0.0" y="-0.5" width="327" height="62"/>
+                                                <rect key="frame" x="0.0" y="-0.5" width="327" height="61"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-71-lFd">
-                                                        <rect key="frame" x="16" y="16" width="295" height="30"/>
+                                                        <rect key="frame" x="16" y="16" width="295" height="29"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LwF-2T-jRD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="116" height="29"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-8i-I47">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="center" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-8i-I47">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="29"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay Cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ9-lR-eBy">
-                                                                        <rect key="frame" x="29" y="0.0" width="71" height="30"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <rect key="frame" x="19" y="0.0" width="97" height="29"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz1-uP-j3E">
-                                                                <rect key="frame" x="273" y="0.0" width="22" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz1-uP-j3E">
+                                                                <rect key="frame" x="268" y="0.0" width="27" height="29"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -64,7 +64,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SOQ-9X-BSh">
-                                                <rect key="frame" x="0.0" y="61.5" width="327" height="129.5"/>
+                                                <rect key="frame" x="0.0" y="60.5" width="327" height="130.5"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -99,6 +99,7 @@
                         <outlet property="containerView" destination="g3d-cb-mn8" id="Egm-n8-RGf"/>
                         <outlet property="holographicView" destination="CB5-8i-2nP" id="yhz-6J-Ubf"/>
                         <outlet property="imageView" destination="SOQ-9X-BSh" id="qsr-tH-Cfj"/>
+                        <outlet property="textLabel" destination="LZ9-lR-eBy" id="hOp-TQ-n0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,6 +108,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple" width="25" height="30"/>
+        <image name="apple" width="15" height="18"/>
     </resources>
 </document>
