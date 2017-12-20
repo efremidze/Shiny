@@ -26,20 +26,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="191"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72D-ji-Vck">
-                                                <rect key="frame" x="0.0" y="-0.5" width="327" height="61"/>
+                                                <rect key="frame" x="0.0" y="-0.5" width="327" height="32"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="5uU-71-lFd">
-                                                        <rect key="frame" x="16" y="16" width="295" height="29"/>
+                                                        <rect key="frame" x="16" y="16" width="295" height="0.0"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LwF-2T-jRD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="116" height="29"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="116" height="0.0"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="center" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-8i-I47">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="29"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="0.0"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay Cash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ9-lR-eBy">
-                                                                        <rect key="frame" x="19" y="0.0" width="97" height="29"/>
+                                                                        <rect key="frame" x="19" y="0.0" width="97" height="0.0"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz1-uP-j3E">
-                                                                <rect key="frame" x="268" y="0.0" width="27" height="29"/>
+                                                                <rect key="frame" x="268" y="0.0" width="27" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -63,8 +63,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="5uU-71-lFd" secondAttribute="trailing" constant="16" id="rrt-J8-pKy"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SOQ-9X-BSh">
-                                                <rect key="frame" x="0.0" y="60.5" width="327" height="130.5"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern2" translatesAutoresizingMaskIntoConstraints="NO" id="SOQ-9X-BSh">
+                                                <rect key="frame" x="0.0" y="31.5" width="327" height="159.5"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
@@ -109,5 +109,6 @@
     </scenes>
     <resources>
         <image name="apple" width="15" height="18"/>
+        <image name="pattern2" width="502" height="227"/>
     </resources>
 </document>

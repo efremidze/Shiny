@@ -15,6 +15,7 @@ open class HolographicView: UIView {
     private lazy var gradientLayer: RadialGradientLayer = {
         let gradientLayer = RadialGradientLayer()
         gradientLayer.needsDisplayOnBoundsChange = true
+        gradientLayer.backgroundColor = UIColor.clear.cgColor
         self.layer.insertSublayer(gradientLayer, at: 0)
         return gradientLayer
     }()
