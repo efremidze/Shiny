@@ -12,6 +12,9 @@
 		712C8CDA1FE0C3FE001437B4 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 712C8CD71FE0C3FE001437B4 /* CHANGELOG.md */; };
 		712C8CDB1FE0C486001437B4 /* Holographic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D772CE1FE0C29E00B1E7A1 /* Holographic.framework */; };
 		712C8CDC1FE0C486001437B4 /* Holographic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 71D772CE1FE0C29E00B1E7A1 /* Holographic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		713198751FEA22300007F0FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713198741FEA22300007F0FD /* Extensions.swift */; };
+		713198771FEA22420007F0FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713198761FEA22420007F0FD /* Extensions.swift */; };
+		713198791FEA22960007F0FD /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713198781FEA22960007F0FD /* ContainerView.swift */; };
 		718B952D1FE0C399003D1962 /* Holographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718B952C1FE0C399003D1962 /* Holographic.swift */; };
 		71D772D31FE0C29E00B1E7A1 /* Holographic.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D772D11FE0C29E00B1E7A1 /* Holographic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71D772E01FE0C2B400B1E7A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D772DF1FE0C2B400B1E7A1 /* AppDelegate.swift */; };
@@ -49,6 +52,9 @@
 		712C8CD51FE0C3FE001437B4 /* Holographic.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Holographic.podspec; sourceTree = "<group>"; };
 		712C8CD61FE0C3FE001437B4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		712C8CD71FE0C3FE001437B4 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		713198741FEA22300007F0FD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		713198761FEA22420007F0FD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		713198781FEA22960007F0FD /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		718B952C1FE0C399003D1962 /* Holographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holographic.swift; sourceTree = "<group>"; };
 		71D772CE1FE0C29E00B1E7A1 /* Holographic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Holographic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D772D11FE0C29E00B1E7A1 /* Holographic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Holographic.h; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			children = (
 				71D772D11FE0C29E00B1E7A1 /* Holographic.h */,
 				718B952C1FE0C399003D1962 /* Holographic.swift */,
+				713198741FEA22300007F0FD /* Extensions.swift */,
 				71D772D21FE0C29E00B1E7A1 /* Info.plist */,
 			);
 			name = Holographic;
@@ -118,6 +125,8 @@
 			children = (
 				71D772DF1FE0C2B400B1E7A1 /* AppDelegate.swift */,
 				71D772E11FE0C2B400B1E7A1 /* ViewController.swift */,
+				713198781FEA22960007F0FD /* ContainerView.swift */,
+				713198761FEA22420007F0FD /* Extensions.swift */,
 				71D772E31FE0C2B400B1E7A1 /* Main.storyboard */,
 				71D772E61FE0C2B400B1E7A1 /* Assets.xcassets */,
 				71D772E81FE0C2B400B1E7A1 /* LaunchScreen.storyboard */,
@@ -246,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718B952D1FE0C399003D1962 /* Holographic.swift in Sources */,
+				713198751FEA22300007F0FD /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				713198791FEA22960007F0FD /* ContainerView.swift in Sources */,
 				71D772E21FE0C2B400B1E7A1 /* ViewController.swift in Sources */,
+				713198771FEA22420007F0FD /* Extensions.swift in Sources */,
 				71D772E01FE0C2B400B1E7A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
