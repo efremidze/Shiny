@@ -30,5 +30,5 @@ extension UIColor {
     class var pink: UIColor { return UIColor(red: 255, green: 45, blue: 85) }
     class var background: UIColor { return UIColor(red: 17, green: 17, blue: 17) }
     class var gray: UIColor { return UIColor(red: 34, green: 34, blue: 34) }
-    static let all: [UIColor] = [red, orange, yellow, green, tealBlue, blue, purple, pink, gray]
+    static let all: [UIColor] = [red, orange, green, blue, purple, pink, gray]
 }
