@@ -22,7 +22,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3d-cb-mn8" customClass="ContainerView" customModule="Example" customModuleProvider="target">
                                 <rect key="frame" x="24" y="235.5" width="327" height="196"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-8i-2nP" customClass="HolographicView" customModule="Holographic">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-8i-2nP" customClass="ShinyView" customModule="Shiny">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="196"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72D-ji-Vck">
@@ -96,8 +96,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ShinyView" destination="CB5-8i-2nP" id="yhz-6J-Ubf"/>
                         <outlet property="containerView" destination="g3d-cb-mn8" id="Egm-n8-RGf"/>
-                        <outlet property="holographicView" destination="CB5-8i-2nP" id="yhz-6J-Ubf"/>
                         <outlet property="imageView" destination="SOQ-9X-BSh" id="qsr-tH-Cfj"/>
                         <outlet property="textLabel" destination="LZ9-lR-eBy" id="hOp-TQ-n0g"/>
                     </connections>

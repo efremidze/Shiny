@@ -1,6 +1,6 @@
 //
-//  Holographic.swift
-//  Holographic
+//  Shiny.swift
+//  Shiny
 //
 //  Created by Lasha Efremidze on 12/12/17.
 //  Copyright © 2017 Lasha Efremidze. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 import CoreMotion
 
 //@IBDesignable
-open class HolographicView: UIView {
+open class ShinyView: UIView {
     
     lazy var gradientLayer: RadialGradientLayer = {
         let gradientLayer = RadialGradientLayer()

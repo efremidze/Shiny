@@ -1,6 +1,6 @@
-# Contributing to _Holographic_
+# Contributing to _Shiny_
 
-The following is a set of guidelines for contributing to _Holographic_ on GitHub.
+The following is a set of guidelines for contributing to _Shiny_ on GitHub.
 
 > Above all, thank you for your interest in the project and for taking the time to contribute! 👍
 
@@ -8,28 +8,28 @@ The following is a set of guidelines for contributing to _Holographic_ on GitHub
 
 Before submitting a new GitHub issue, please make sure to
 
-- Check out the [documentation](https://github.com/efremidze/Holographic).
-- Read the usage guide on [the README](https://github.com/efremidze/Holographic/#usage).
-- Search for [existing GitHub issues](https://github.com/efremidze/Holographic/issues).
+- Check out the [documentation](https://github.com/efremidze/Shiny).
+- Read the usage guide on [the README](https://github.com/efremidze/Shiny/#usage).
+- Search for [existing GitHub issues](https://github.com/efremidze/Shiny/issues).
 
-If the above doesn't help, please [submit an issue](https://github.com/efremidze/Holographic/issues) on GitHub.
+If the above doesn't help, please [submit an issue](https://github.com/efremidze/Shiny/issues) on GitHub.
 
-## I want to contribute to _Holographic_
+## I want to contribute to _Shiny_
 
 ### Prerequisites
 
-To develop _Holographic_, you will need to use an Xcode version compatible with the Swift version specified in the [README](https://github.com/efremidze/Holographic/#requirements).
+To develop _Shiny_, you will need to use an Xcode version compatible with the Swift version specified in the [README](https://github.com/efremidze/Shiny/#requirements).
 
 ### Checking out the repository
 
 - Click the “Fork” button in the upper right corner of repo
 - Clone your fork:
-    - `git clone https://github.com/<YOUR_GITHUB_USERNAME>/Holographic.git`
+    - `git clone https://github.com/<YOUR_GITHUB_USERNAME>/Shiny.git`
 - Create a new branch to work on:
     - `git checkout -b <YOUR_BRANCH_NAME>`
     - A good name for a branch describes the thing you’ll be working on, e.g. `voice-over`, `fix-font-size`, etc.
 
-That’s it! Now you’re ready to work on _Holographic_. Open the `Holographic.xcworkspace` workspace to start coding.
+That’s it! Now you’re ready to work on _Shiny_. Open the `Shiny.xcworkspace` workspace to start coding.
 
 ### Things to keep in mind
 
@@ -45,14 +45,14 @@ Before opening a pull request, please make sure your changes don't break things.
 
 ### Submitting the PR
 
-When the coding is done and you’ve finished testing your changes, you are ready to submit the PR to the [main repo](https://github.com/efremidze/Holographic). Some best practices are:
+When the coding is done and you’ve finished testing your changes, you are ready to submit the PR to the [main repo](https://github.com/efremidze/Shiny). Some best practices are:
 
 - Use a descriptive title
 - Link the issues that are related to your PR in the body
 
 ## Code of Conduct
 
-Help us keep _Holographic_ open and inclusive. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+Help us keep _Shiny_ open and inclusive. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

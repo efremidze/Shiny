@@ -1,3 +1,3 @@
 import PackageDescription
 
-let package = Package(name: "Holographic")
+let package = Package(name: "Shiny")

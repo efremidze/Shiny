@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Holographic
+import Shiny
 
 class ViewController: UIViewController {
     @IBOutlet weak var containerView: ContainerView! {
@@ -26,13 +26,13 @@ class ViewController: UIViewController {
             containerView.addMotionEffect(group)
         }
     }
-    @IBOutlet weak var holographicView: HolographicView! {
+    @IBOutlet weak var shinyView: ShinyView! {
         didSet {
-            holographicView.colors = [UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray].map { $0.withAlphaComponent(0.5) }
-            holographicView.locations = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 1]
-            holographicView.layer.cornerRadius = 20
-            holographicView.layer.masksToBounds = true
-            holographicView.startUpdates()
+            shinyView.colors = [UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray].map { $0.withAlphaComponent(0.5) }
+            shinyView.locations = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 1]
+            shinyView.layer.cornerRadius = 20
+            shinyView.layer.masksToBounds = true
+            shinyView.startUpdates()
         }
     }
     @IBOutlet weak var imageView: UIImageView! {
