@@ -12,17 +12,7 @@ It has an shiny effect similar to the Apple Pay Cash wallet card.
 
 <img src="Images/applepay.png" width="318" alt="Apple Pay" />
 
-## Requirements
-
-- iOS 9.0+
-- Xcode 9.0+
-- Swift 4
-
-## Demo
-
 A demo project is included in the `Shiny` workspace.
-
-Here's a video showing it in action:
 
 <img src="https://thumbs.gfycat.com/NewGrotesqueKitten-size_restricted.gif" width="320">
 
@@ -31,6 +21,12 @@ Here's a video showing it in action:
 ```
 $ pod try Shiny
 ```
+
+## Requirements
+
+- iOS 9.0+
+- Xcode 9.0+
+- Swift 4
 
 ## Usage
 
