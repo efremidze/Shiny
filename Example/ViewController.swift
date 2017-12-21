@@ -28,9 +28,11 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var holographicView: HolographicView! {
         didSet {
-            holographicView.colors = UIColor.all.map { $0.withAlphaComponent(0.5) }
+            holographicView.colors = [UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray].map { $0.withAlphaComponent(0.5) }
+            holographicView.locations = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 1]
             holographicView.layer.cornerRadius = 20
             holographicView.layer.masksToBounds = true
+            holographicView.startUpdates()
         }
     }
     @IBOutlet weak var imageView: UIImageView! {
