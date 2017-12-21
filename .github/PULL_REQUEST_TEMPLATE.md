@@ -1,4 +1,4 @@
-<!-- Thanks for contributing to _Holographic_! Before you submit your pull request, please make sure to check the following boxes by putting an x in the [ ] -->
+<!-- Thanks for contributing to _Shiny_! Before you submit your pull request, please make sure to check the following boxes by putting an x in the [ ] -->
 
 ### Checklist
 - [ ] I've tested my changes.

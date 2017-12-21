@@ -1,6 +1,6 @@
 //
 //  Gyro.swift
-//  Holographic
+//  Shiny
 //
 //  Created by Lasha Efremidze on 12/20/17.
 //  Copyright © 2017 Lasha Efremidze. All rights reserved.

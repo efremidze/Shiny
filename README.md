@@ -1,4 +1,4 @@
-# Holographic
+# Shiny
 
 <p align="center">
 <img src="Images/applepay.png" width="318" alt="Apple Pay" />
@@ -8,28 +8,28 @@
 <a href="https://swift.org" target="_blank">
 <img alt="Language" src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat">
 </a>
-<a href="http://cocoapods.org/pods/Holographic" target="_blank">
-<img alt="Version" src="https://img.shields.io/cocoapods/v/Holographic.svg?style=flat">
+<a href="http://cocoapods.org/pods/Shiny" target="_blank">
+<img alt="Version" src="https://img.shields.io/cocoapods/v/Shiny.svg?style=flat">
 </a>
-<a href="http://cocoapods.org/pods/Holographic" target="_blank">
-<img alt="License" src="https://img.shields.io/cocoapods/l/Holographic.svg?style=flat">
+<a href="http://cocoapods.org/pods/Shiny" target="_blank">
+<img alt="License" src="https://img.shields.io/cocoapods/l/Shiny.svg?style=flat">
 </a>
-<a href="http://cocoapods.org/pods/Holographic" target="_blank">
-<img alt="Platform" src="https://img.shields.io/cocoapods/p/Holographic.svg?style=flat">
+<a href="http://cocoapods.org/pods/Shiny" target="_blank">
+<img alt="Platform" src="https://img.shields.io/cocoapods/p/Shiny.svg?style=flat">
 </a>
 <a href="https://github.com/Carthage/Carthage" target="_blank">
 <img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat">
 </a>
 </p>
 
-Holographic Effect (inspired by Apple Pay)
+Shiny Effect (inspired by Apple Pay)
 
 <img src="https://thumbs.gfycat.com/NewGrotesqueKitten-size_restricted.gif" width="320">
 
 [Demo Video](https://gfycat.com/gifs/detail/NewGrotesqueKitten)
 
 ```
-$ pod try Holographic
+$ pod try Shiny
 ```
 
 ## Requirements
@@ -40,19 +40,19 @@ $ pod try Holographic
 
 ## Installation
 
-Holographic is available via CocoaPods and Carthage.
+Shiny is available via CocoaPods and Carthage.
 
 ### CocoaPods
 To install with [CocoaPods](http://cocoapods.org/), simply add this in your `Podfile`:
 ```ruby
 use_frameworks!
-pod "Holographic"
+pod "Shiny"
 ```
 
 ### Carthage
 To install with [Carthage](https://github.com/Carthage/Carthage), simply add this in your `Cartfile`:
 ```ruby
-github "efremidze/Holographic"
+github "efremidze/Shiny"
 ```
 
 ## Communication
@@ -61,10 +61,10 @@ github "efremidze/Holographic"
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
-## Apps Using _Holographic_
+## Apps Using _Shiny_
 
 Feel free to submit a PR if you’re using this library in your apps.
 
 ## License
 
-Holographic is available under the MIT license. See the LICENSE file for more info.
+Shiny is available under the MIT license. See the LICENSE file for more info.
