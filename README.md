@@ -48,7 +48,7 @@ var colors: [UIColor] // The color of each gradient stop.
 var locations: [CGFloat]? // The location of each gradient stop. The default is `nil`.
 var spread: CGFloat // The distance between colors on the gradient. The default is `0.8`.
 var padding: CGFloat // The padding on the edges of the gradient. The default is `0.1`.
-var intensity: CGFloat // The sensitivity of the gyroscopic motion. The default is `0.2`.
+var sensitivity: CGFloat // The sensitivity of the gyroscopic motion. The default is `0.2`.
 ```
 
 You can start/stop observing motion updates:
