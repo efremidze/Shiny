@@ -6,9 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Shiny.svg?style=flat)](http://cocoapods.org/pods/Shiny)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-**Shiny** is an iOS library that generates a shiny effect view using the gyroscope.
-
-It has an shiny effect similar to the Apple Pay Cash wallet card.
+**Shiny** is an iOS library that generates a shiny effect view using the gyroscope. It has an shiny effect similar to the Apple Pay Cash wallet card.
 
 <img src="Images/applepay.png" width="318" alt="Apple Pay" />
 
