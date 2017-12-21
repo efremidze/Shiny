@@ -9,9 +9,6 @@
 **Shiny** is an iOS library that generates a shiny effect view using the gyroscope. It has an shiny effect similar to the Apple Pay Cash wallet card.
 
 <img src="Images/applepay.png" width="318" alt="Apple Pay" />
-
-A demo project is included in the `Shiny` workspace.
-
 <img src="https://thumbs.gfycat.com/NewGrotesqueKitten-size_restricted.gif" width="320">
 
 [Demo Video](https://gfycat.com/gifs/detail/NewGrotesqueKitten)
