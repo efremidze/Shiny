@@ -42,7 +42,7 @@ shinyView.startUpdates() // necessary
 view.addSubview(shinyView)
 ```
 
-You must call startUpdates() for the instance to observe motion changes. Calling stopUpdates() on the instance will stop motion updates.
+You must call `startUpdates()` for the instance to observe motion changes. Calling `stopUpdates()` on the instance will stop motion updates.
 
 ### Customization
 
