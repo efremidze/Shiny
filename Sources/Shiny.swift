@@ -20,6 +20,9 @@ open class ShinyView: UIView {
         return gradientLayer
     }()
     
+    /**
+     The array of UIColor objects defining the color of each gradient stop.
+     */
     open var colors = [UIColor]() {
         didSet {
             gradientLayer.colors = colors.map { $0.cgColor }
@@ -27,23 +30,43 @@ open class ShinyView: UIView {
         }
     }
     
+    /**
+     The array of CGFloat objects defining the location of each gradient stop as a value in the range [0,1]. The values must be monotonically increasing. If a nil array is given, the stops are assumed to spread uniformly across the [0,1] range. Defaults to nil.
+     */
     open var locations: [CGFloat]? {
         get { return gradientLayer.locations }
         set { gradientLayer.locations = newValue }
     }
     
+    /**
+     The distance between colors on the gradient.
+     */
     open var spread: CGFloat = 0.8
-    open var intensity: CGFloat = 0.2
+    
+    /**
+     The padding on the edges of the gradient.
+     */
     open var padding: CGFloat = 0.1
     
+    /**
+     The sensitivity of the gyroscopic motion.
+     */
+    open var sensitivity: CGFloat = 0.2
+    
+    /**
+     Starts listening to motion updates.
+     */
     open func startUpdates() {
         Gyro.observe { [weak self] vector in
             guard let `self` = self else { return }
-            self.gradientLayer.anchorPoint.x = (vector.dx * self.intensity).center().add(self.padding)
-            self.gradientLayer.anchorPoint.y = (vector.dy * self.intensity).center().add(self.padding)
+            self.gradientLayer.anchorPoint.x = (vector.dx * self.sensitivity).center().add(self.padding)
+            self.gradientLayer.anchorPoint.y = (vector.dy * self.sensitivity).center().add(self.padding)
         }
     }
     
+    /**
+     Stops listening to motion updates.
+     */
     open func stopUpdates() {
         Gyro.stopDeviceMotionUpdates()
     }

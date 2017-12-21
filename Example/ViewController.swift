@@ -17,22 +17,16 @@ class ViewController: UIViewController {
             containerView.layer.shadowOffset = .zero
             containerView.layer.shadowRadius = 14
             containerView.layer.cornerRadius = 20
-            
-            let group = UIMotionEffectGroup()
-            group.motionEffects = [
-                UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis, span: 20),
-                UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis, span: 20)
-            ]
-            containerView.addMotionEffect(group)
+            containerView.addParallax()
         }
     }
     @IBOutlet weak var shinyView: ShinyView! {
         didSet {
             shinyView.colors = [UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray].map { $0.withAlphaComponent(0.5) }
             shinyView.locations = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 1]
+            shinyView.startUpdates()
             shinyView.layer.cornerRadius = 20
             shinyView.layer.masksToBounds = true
-            shinyView.startUpdates()
         }
     }
     @IBOutlet weak var imageView: UIImageView! {
