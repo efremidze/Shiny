@@ -26,7 +26,7 @@ open class ShinyView: UIView {
     open var colors = [UIColor]() {
         didSet {
             gradientLayer.colors = colors.map { $0.cgColor }
-            gradientLayer.frame = self.bounds.insetBy(dx: -self.bounds.width * CGFloat(colors.count) * spread, dy: -self.bounds.height * CGFloat(colors.count) / spread)
+            gradientLayer.frame = self.bounds.insetBy(dx: -self.bounds.width * CGFloat(colors.count) * spread, dy: -self.bounds.height * CGFloat(colors.count) * spread)
         }
     }
     
