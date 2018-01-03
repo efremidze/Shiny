@@ -9,7 +9,7 @@
 import UIKit
 
 class RadialGradientLayer: CALayer {
-    var colors = [CGColor]()
+    var colors = [CGColor]() { didSet { setNeedsDisplay() } }
     var locations: [CGFloat]?
     override func draw(in ctx: CGContext) {
         ctx.saveGState()
