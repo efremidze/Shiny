@@ -12,45 +12,33 @@ import CoreMotion
 //@IBDesignable
 open class ShinyView: UIView {
     
-    lazy var replicatorLayer: CAReplicatorLayer = {
+    lazy var horizontalLayer: CAReplicatorLayer = {
         let replicatorLayer = CAReplicatorLayer()
-//        replicatorLayer.frame.origin.x = -itemSize.width
-//        replicatorLayer.frame.origin.y = -itemSize.height
         replicatorLayer.frame.size = size
-        replicatorLayer.masksToBounds = true
         replicatorLayer.instanceCount = Int(ceil(size.width / itemSize.width))
-        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(
-            itemSize.width, 0, 0
-        )
-        self.layer.addSublayer(replicatorLayer)
-        
+        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(itemSize.width, 0, 0)
         return replicatorLayer
     }()
     
-    lazy var replicatorLayer2: CAReplicatorLayer = {
-        let replicatorLayer2 = CAReplicatorLayer()
-        replicatorLayer2.frame.origin.x = -itemSize.width
-        replicatorLayer2.frame.origin.y = -itemSize.height
-        replicatorLayer2.frame.size = size
-        replicatorLayer2.masksToBounds = true
-        replicatorLayer2.instanceCount = Int(ceil(size.height / itemSize.height))
-        replicatorLayer2.instanceTransform = CATransform3DMakeTranslation(
-            0, itemSize.height, 0
-        )
-        self.layer.addSublayer(replicatorLayer2)
-        
-        replicatorLayer2.addSublayer(replicatorLayer)
-        
-        return replicatorLayer2
+    lazy var verticalLayer: CAReplicatorLayer = {
+        let replicatorLayer = CAReplicatorLayer()
+        replicatorLayer.frame.size = itemSize
+//        replicatorLayer.position = CGPoint(x: -itemSize.width / 2, y: -itemSize.height / 2)
+//        replicatorLayer.frame = self.frame.insetBy(dx: -size.width / 2, dy: -size.height / 2)
+        replicatorLayer.instanceCount = Int(ceil(size.height / itemSize.height))
+        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(0, itemSize.height, 0)
+        return replicatorLayer
     }()
     
     lazy var gradientLayer: RadialGradientLayer = {
         let gradientLayer = RadialGradientLayer()
         gradientLayer.frame.size = itemSize
-//        gradientLayer.needsDisplayOnBoundsChange = true
+        gradientLayer.needsDisplayOnBoundsChange = true
         gradientLayer.backgroundColor = UIColor.clear.cgColor
-//        self.layer.insertSublayer(gradientLayer, at: 0)
-        replicatorLayer.addSublayer(gradientLayer)
+//        self.layer.insertSublayer(verticalLayer, at: 0) // TEMP
+        self.layer.addSublayer(verticalLayer)
+        verticalLayer.addSublayer(horizontalLayer)
+        horizontalLayer.addSublayer(gradientLayer)
         return gradientLayer
     }()
     
@@ -90,12 +78,12 @@ open class ShinyView: UIView {
      Starts listening to motion updates.
      */
     open func startUpdates() {
-        self.replicatorLayer2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        Gyro.observe { [weak self] roll, pitch in
-            guard let `self` = self else { return }
-            self.replicatorLayer2.anchorPoint.x = ((180 + roll + self.rollOffset) % 360) / 360
-            self.replicatorLayer2.anchorPoint.y = ((90 + pitch + self.pitchOffset) % 180) / 180
-        }
+        self.verticalLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+//        Gyro.observe { [weak self] roll, pitch in
+//            guard let `self` = self else { return }
+//            self.verticalLayer.anchorPoint.x = ((180 + roll + self.rollOffset) % 360) / 360
+//            self.verticalLayer.anchorPoint.y = ((90 + pitch + self.pitchOffset) % 180) / 180
+//        }
     }
     
     /**
