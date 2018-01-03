@@ -8,17 +8,8 @@
 
 import Foundation
 
-extension Comparable {
-    func clamped(to limits: ClosedRange<Self>) -> Self {
-        return min(max(self, limits.lowerBound), limits.upperBound)
-    }
-}
-
-extension CGFloat {
-    func center() -> CGFloat {
-        return 0.5 - (self / 0.5)
-    }
-    func add(_ padding: CGFloat) -> CGFloat {
-        return clamped(to: padding...(1 - padding))
-    }
+infix operator %: MultiplicationPrecedence
+func % (left: CGFloat, right: CGFloat) -> CGFloat {
+    let v = left.truncatingRemainder(dividingBy: right)
+    return v >= 0 ? v : v + right
 }
