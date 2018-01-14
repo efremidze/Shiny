@@ -79,11 +79,11 @@ open class ShinyView: UIView {
      */
     open func startUpdates() {
         self.verticalLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        Gyro.observe { [weak self] roll, pitch in
-//            guard let `self` = self else { return }
-//            self.verticalLayer.anchorPoint.x = ((180 + roll + self.rollOffset) % 360) / 360
-//            self.verticalLayer.anchorPoint.y = ((90 + pitch + self.pitchOffset) % 180) / 180
-//        }
+        Gyro.observe { [weak self] roll, pitch, yaw in
+            guard let `self` = self else { return }
+            self.verticalLayer.anchorPoint.x = ((180 + roll + self.rollOffset) % 360) / 360
+            self.verticalLayer.anchorPoint.y = ((180 + pitch + self.pitchOffset) % 360) / 360
+        }
     }
     
     /**
