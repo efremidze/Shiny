@@ -15,7 +15,7 @@ open class ShinyView: UIView {
     let cameraNode = SCNNode()
     
     lazy var sphere: SCNSphere = {
-        let sceneView = SCNView(frame: self.bounds)
+        let sceneView = SCNView(frame: self.bounds.insetBy(dx: -300, dy: -300))
         self.addSubview(sceneView)
         
         // Set the scene
@@ -24,7 +24,7 @@ open class ShinyView: UIView {
         sceneView.allowsCameraControl = true
         
         // Create node, containing a sphere, using the panoramic image as a texture
-        let sphere = SCNSphere(radius: 40.0)
+        let sphere = SCNSphere(radius: 20)
         sphere.firstMaterial!.isDoubleSided = true
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3Make(0, 0, 0)
@@ -61,7 +61,7 @@ open class ShinyView: UIView {
         Gyro.observe { [weak self] roll, pitch, yaw in
             guard let `self` = self else { return }
             
-            SCNTransaction.animationDuration = 0.1
+            SCNTransaction.animationDuration = 0
             self.cameraNode.eulerAngles.x = Float(pitch - .pi/2)
 //            self.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360
         }
