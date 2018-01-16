@@ -18,8 +18,16 @@ class GyroManager: CMMotionManager {
         deviceMotionUpdateInterval = 1 / 60
         startDeviceMotionUpdates(to: queue) { data, error in
             guard let data = data else { return }
+            var pitch = data.attitude.pitch
+            if data.gravity.z > 0 {
+                if pitch > 0 {
+                    pitch = .pi - pitch
+                } else {
+                    pitch = -(.pi + pitch)
+                }
+            }
             DispatchQueue.main.sync {
-                observer(data.attitude.roll, data.attitude.pitch, data.attitude.yaw)
+                observer(data.attitude.roll, pitch, data.attitude.yaw)
             }
         }
     }
