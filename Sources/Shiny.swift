@@ -24,9 +24,8 @@ open class ShinyView: UIView {
         sceneView.allowsCameraControl = true
         
         // Create node, containing a sphere, using the panoramic image as a texture
-        let sphere = SCNSphere(radius: 20.0)
+        let sphere = SCNSphere(radius: 40.0)
         sphere.firstMaterial!.isDoubleSided = true
-//        sphere.firstMaterial!.diffuse.contents = image
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3Make(0, 0, 0)
         scene.rootNode.addChildNode(sphereNode)
@@ -60,7 +59,7 @@ open class ShinyView: UIView {
 
         Gyro.observe { [weak self] roll, pitch, yaw in
             guard let `self` = self else { return }
-            self.cameraNode.eulerAngles = SCNVector3(x: Float(roll), y: Float(yaw), z: Float(pitch))
+            self.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: 0, z: 0)
         }
     }
     
