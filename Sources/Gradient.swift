@@ -8,56 +8,62 @@
 
 import UIKit
 
-class ReplicatorLayer: CALayer {
+class ReplicatorLayer<T: CALayer>: CALayer {
     
-//    lazy var horizontalLayer: CAReplicatorLayer = {
-//        let replicatorLayer = CAReplicatorLayer()
-//        replicatorLayer.frame.size = size
-//        replicatorLayer.instanceCount = Int(ceil(size.width / itemSize.width))
-//        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(itemSize.width, 0, 0)
-//        return replicatorLayer
-//    }()
+    lazy var horizontalLayer: CAReplicatorLayer = {
+        let replicatorLayer = CAReplicatorLayer()
+        replicatorLayer.frame.size = size
+        replicatorLayer.instanceCount = Int(ceil(size.width / instanceSize.width))
+        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(instanceSize.width, 0, 0)
+        return replicatorLayer
+    }()
     
     lazy var verticalLayer: CAReplicatorLayer = {
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.frame.size = size
-//        replicatorLayer.position = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
-        //        replicatorLayer.position = CGPoint(x: itemSize.width / 2, y: itemSize.height / 2)
-        //        replicatorLayer.frame = self.frame.insetBy(dx: -size.width / 2, dy: -size.height / 2)
-        replicatorLayer.instanceCount = Int(ceil(size.height / itemSize.height))
-        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(0, itemSize.height, 0)
+        replicatorLayer.instanceCount = Int(ceil(size.height / instanceSize.height))
+        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(0, instanceSize.height, 0)
         return replicatorLayer
     }()
     
-    lazy var gradientLayer: CAGradientLayer = {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame.size = itemSize
-        //        gradientLayer.needsDisplayOnBoundsChange = true
-        gradientLayer.backgroundColor = UIColor.clear.cgColor
-        //        self.layer.insertSublayer(verticalLayer, at: 0) // TEMP
-        self.addSublayer(verticalLayer)
-        verticalLayer.addSublayer(gradientLayer)
-//        verticalLayer.addSublayer(horizontalLayer)
-//        horizontalLayer.addSublayer(gradientLayer)
-        return gradientLayer
+    lazy var instanceLayer: T = {
+        let layer = T()
+        layer.frame.size = instanceSize
+        self.insertSublayer(verticalLayer, at: 0)
+        verticalLayer.addSublayer(horizontalLayer)
+        horizontalLayer.addSublayer(layer)
+        return layer
     }()
     
-    var size: CGSize {
-        return CGSize(width: itemSize.width * 4, height: itemSize.height * 4)
-    }
-    
-    var itemSize: CGSize {
-        let dimension = max(self.frame.width, self.frame.height)
-        return CGSize(width: dimension, height: dimension)
-    }
+    lazy var instanceSize: CGSize = size
     
 }
 
-class ReplicatorLayerView: UIView {
-    override class var layerClass: AnyClass {
-        return ReplicatorLayer.self
+class RadialGradientLayer: CALayer {
+    var colors = [CGColor]() { didSet { setNeedsDisplay() } }
+    var locations: [CGFloat]?
+    override func draw(in ctx: CGContext) {
+        ctx.saveGState()
+        guard let gradient = CGGradient(colorsSpace: nil, colors: colors as CFArray, locations: locations) else { return }
+        let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+        ctx.drawRadialGradient(gradient, startCenter: center, startRadius: 0, endCenter: center, endRadius: radius, options: .drawsBeforeStartLocation)
     }
-    var _layer: ReplicatorLayer {
-        return layer as! ReplicatorLayer
+}
+
+class LayerView<T: CALayer>: UIView {
+    override class var layerClass: AnyClass {
+        return T.self
+    }
+    var _layer: T {
+        return layer as! T
+    }
+}
+
+extension CALayer {
+    var radius: CGFloat {
+        return sqrt(pow(bounds.width / 2, 2) + pow(bounds.height / 2, 2))
+    }
+    var size: CGSize {
+        return frame.size
     }
 }
