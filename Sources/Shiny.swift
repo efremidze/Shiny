@@ -48,8 +48,8 @@ open class ShinyView: UIView {
      Starts listening to motion updates.
      */
     open func startUpdates() {
-        let view = ReplicatorLayerView(frame: self.bounds)
-        view._layer.gradientLayer.colors = colors.map { $0.cgColor }
+        let view = LayerView<ReplicatorLayer<CAGradientLayer>>(frame: self.bounds)
+        view._layer.instanceLayer.colors = colors.map { $0.cgColor }
         let image = UIImage(from: view)
         sphere.firstMaterial!.diffuse.contents = image
         
@@ -60,6 +60,7 @@ open class ShinyView: UIView {
         Gyro.observe { [weak self] roll, pitch, yaw in
             guard let `self` = self else { return }
             self.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: 0, z: 0)
+//            self.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360
         }
     }
     
