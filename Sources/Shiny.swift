@@ -15,8 +15,9 @@ open class ShinyView: UIView {
     let cameraNode = SCNNode()
     
     lazy var sphere: SCNSphere = {
-        let sceneView = SCNView(frame: self.bounds.insetBy(dx: -300, dy: -300))
-        self.addSubview(sceneView)
+        let sceneView = SCNView(frame: self.bounds.insetBy(dx: -400, dy: -400))
+//        self.addSubview(sceneView) // testing
+        self.insertSubview(sceneView, at: 0)
         
         // Set the scene
         let scene = SCNScene()
