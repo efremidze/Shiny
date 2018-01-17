@@ -13,6 +13,9 @@ class ReplicatorLayer<T: CALayer>: CALayer {
     lazy var horizontalLayer: CAReplicatorLayer = {
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.frame.size = size
+        
+        replicatorLayer.masksToBounds = true
+        
         replicatorLayer.instanceCount = Int(ceil(size.width / instanceSize.width))
         replicatorLayer.instanceTransform = CATransform3DMakeTranslation(instanceSize.width, 0, 0)
         return replicatorLayer
@@ -21,6 +24,9 @@ class ReplicatorLayer<T: CALayer>: CALayer {
     lazy var verticalLayer: CAReplicatorLayer = {
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.frame.size = size
+        
+        replicatorLayer.masksToBounds = true
+        
         replicatorLayer.instanceCount = Int(ceil(size.height / instanceSize.height))
         replicatorLayer.instanceTransform = CATransform3DMakeTranslation(0, instanceSize.height, 0)
         return replicatorLayer
@@ -29,6 +35,7 @@ class ReplicatorLayer<T: CALayer>: CALayer {
     lazy var instanceLayer: T = {
         let layer = T()
         layer.frame.size = instanceSize
+//        layer.backgroundColor = UIColor.clear.cgColor
         self.insertSublayer(verticalLayer, at: 0)
         verticalLayer.addSublayer(horizontalLayer)
         horizontalLayer.addSublayer(layer)
