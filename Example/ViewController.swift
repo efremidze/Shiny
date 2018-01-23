@@ -22,11 +22,10 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var shinyView: ShinyView! {
         didSet {
-            shinyView.colors = [UIColor.gray, UIColor.gray, UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray, UIColor.gray].map { $0.withAlphaComponent(0.9) }
-            shinyView.configure()
-            shinyView.startUpdates()
             shinyView.layer.cornerRadius = 20
             shinyView.layer.masksToBounds = true
+            shinyView.colors = [UIColor.gray, UIColor.gray, UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray, UIColor.gray].map { $0.withAlphaComponent(0.9) }
+            shinyView.startUpdates()
         }
     }
     @IBOutlet weak var imageView: UIImageView! {

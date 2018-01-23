@@ -10,35 +10,24 @@ import UIKit
 import CoreMotion
 import SceneKit
 
-open class ShinyView: UIView, GradientLayerProtocol {
-    
-    typealias GradientLayerView = LayerView<ReplicatorLayer<CAGradientLayer>>
+open class ShinyView: UIView {
     
     lazy var sceneView: SceneView = {
-        let sceneView = SceneView(frame: self.bounds.insetBy(dx: -400, dy: -400))
+        let sceneView = SceneView(frame: self.bounds.insetBy(dx: -500, dy: -500))
 //        self.addSubview(sceneView) // testing
         self.insertSubview(sceneView, at: 0)
         return sceneView
     }()
     
-    lazy var layerView: GradientLayerView = GradientLayerView(frame: self.bounds)
-    
     open var colors = [UIColor]()
     open var locations: [CGFloat]?
     open var scale: CGFloat = 2
-    
-    open func configure() {
-        layerView.frame.size.height = self.frame.height * scale
-        layerView._layer.instanceSize = self.frame.size
-        gradientView.locations = locations as [NSNumber]?
-        gradientView.colors = colors.map { $0.cgColor }
-        sceneView.image = UIImage(from: layerView)
-    }
     
     /**
      Starts listening to motion updates.
      */
     open func startUpdates() {
+        sceneView.image = GradientSnapshotter.shared.snapshot(frame: self.bounds, colors: colors, locations: locations, scale: scale)
         Gyro.observe { [weak self] roll, pitch, yaw in
             guard let `self` = self else { return }
             

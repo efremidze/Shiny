@@ -33,7 +33,7 @@ extension CALayer {
 }
 
 extension UIView {
-    func snapshot() -> UIImage {
+    var snapshot: UIImage {
         return UIImage(from: self)
     }
 }

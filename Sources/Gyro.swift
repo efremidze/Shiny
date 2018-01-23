@@ -12,7 +12,7 @@ let Gyro = GyroManager.shared
 
 class GyroManager: CMMotionManager {
     static let shared = GyroManager()
-    private let queue = OperationQueue()
+    let queue = OperationQueue()
     func observe(_ observer: @escaping (_ roll: Double, _ pitch: Double, _ yaw: Double) -> Void) {
         guard isDeviceMotionAvailable else { return }
         deviceMotionUpdateInterval = 1 / 60

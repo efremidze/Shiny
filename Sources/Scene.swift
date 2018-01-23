@@ -13,7 +13,7 @@ class SceneView: SCNView {
     lazy var sphere: SCNSphere = {
         self.scene = SCNScene()
         
-        let sphere = SCNSphere(radius: 20)
+        let sphere = SCNSphere(radius: 5) // default
         sphere.firstMaterial!.isDoubleSided = true
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3Make(0, 0, 0)
