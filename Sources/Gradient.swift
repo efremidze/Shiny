@@ -81,10 +81,8 @@ extension GradientLayerProtocol {
 
 class GradientSnapshotter {
     typealias GradientLayerView = LayerView<ReplicatorLayer<CAGradientLayer>>
-    static let shared = GradientSnapshotter()
-    var layerView: GradientLayerView!
-    func snapshot(frame: CGRect, colors: [UIColor], locations: [CGFloat]?, scale: CGFloat) -> UIImage {
-        layerView = GradientLayerView(frame: frame)
+    static func snapshot(frame: CGRect, colors: [UIColor], locations: [CGFloat]?, scale: CGFloat) -> UIImage {
+        let layerView = GradientLayerView(frame: frame)
         layerView.frame.size.height = frame.height * scale
         layerView._layer.instanceSize = frame.size
         layerView._layer.instanceLayer.colors = colors.map { $0.cgColor }
