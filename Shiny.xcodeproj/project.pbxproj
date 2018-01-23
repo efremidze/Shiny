@@ -13,6 +13,7 @@
 		71463DCC1FEBB00F00BCC7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71463DCA1FEBB00F00BCC7B9 /* Main.storyboard */; };
 		71463DCE1FEBB00F00BCC7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71463DCD1FEBB00F00BCC7B9 /* Assets.xcassets */; };
 		71463DD11FEBB00F00BCC7B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71463DCF1FEBB00F00BCC7B9 /* LaunchScreen.storyboard */; };
+		716B1867200FCE9500F09032 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716B1866200FCE9500F09032 /* Scene.swift */; };
 		71C96DB81FEBB7CF00C9CC58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C96DB41FEBB7CF00C9CC58 /* Extensions.swift */; };
 		71C96DB91FEBB7CF00C9CC58 /* Gyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C96DB51FEBB7CF00C9CC58 /* Gyro.swift */; };
 		71C96DBA1FEBB7CF00C9CC58 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C96DB61FEBB7CF00C9CC58 /* Gradient.swift */; };
@@ -61,6 +62,7 @@
 		71463DCD1FEBB00F00BCC7B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71463DD01FEBB00F00BCC7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71463DD21FEBB00F00BCC7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		716B1866200FCE9500F09032 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		71C96DB41FEBB7CF00C9CC58 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		71C96DB51FEBB7CF00C9CC58 /* Gyro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gyro.swift; sourceTree = "<group>"; };
 		71C96DB61FEBB7CF00C9CC58 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				71C96DB41FEBB7CF00C9CC58 /* Extensions.swift */,
 				71C96DB61FEBB7CF00C9CC58 /* Gradient.swift */,
+				716B1866200FCE9500F09032 /* Scene.swift */,
 				71C96DB51FEBB7CF00C9CC58 /* Gyro.swift */,
 				71C96DB71FEBB7CF00C9CC58 /* Shiny.swift */,
 				71463DB81FEBB00300BCC7B9 /* Shiny.h */,
@@ -262,6 +265,7 @@
 			files = (
 				71C96DB91FEBB7CF00C9CC58 /* Gyro.swift in Sources */,
 				71C96DBB1FEBB7CF00C9CC58 /* Shiny.swift in Sources */,
+				716B1867200FCE9500F09032 /* Scene.swift in Sources */,
 				71C96DB81FEBB7CF00C9CC58 /* Extensions.swift in Sources */,
 				71C96DBA1FEBB7CF00C9CC58 /* Gradient.swift in Sources */,
 			);

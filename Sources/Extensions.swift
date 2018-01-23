@@ -16,9 +16,24 @@ func % (left: CGFloat, right: CGFloat) -> CGFloat {
 
 extension UIImage {
     convenience init(from view: UIView) {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         self.init(cgImage:(UIGraphicsGetImageFromCurrentImageContext()?.cgImage!)!)
         UIGraphicsEndImageContext()
+    }
+}
+
+extension CALayer {
+    var radius: CGFloat {
+        return sqrt(pow(bounds.width / 2, 2) + pow(bounds.height / 2, 2))
+    }
+    var size: CGSize {
+        return frame.size
+    }
+}
+
+extension UIView {
+    func snapshot() -> UIImage {
+        return UIImage(from: self)
     }
 }

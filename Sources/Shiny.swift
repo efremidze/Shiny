@@ -10,61 +10,41 @@ import UIKit
 import CoreMotion
 import SceneKit
 
-open class ShinyView: UIView {
+open class ShinyView: UIView, GradientLayerProtocol {
     
-    let cameraNode = SCNNode()
+    typealias GradientLayerView = LayerView<ReplicatorLayer<CAGradientLayer>>
     
-    lazy var sphere: SCNSphere = {
-        let sceneView = SCNView(frame: self.bounds.insetBy(dx: -400, dy: -400))
+    lazy var sceneView: SceneView = {
+        let sceneView = SceneView(frame: self.bounds.insetBy(dx: -400, dy: -400))
 //        self.addSubview(sceneView) // testing
         self.insertSubview(sceneView, at: 0)
-        
-        // Set the scene
-        let scene = SCNScene()
-        sceneView.scene = scene
-        sceneView.allowsCameraControl = true
-        
-        // Create node, containing a sphere, using the panoramic image as a texture
-        let sphere = SCNSphere(radius: 20)
-        sphere.firstMaterial!.isDoubleSided = true
-        let sphereNode = SCNNode(geometry: sphere)
-        sphereNode.position = SCNVector3Make(0, 0, 0)
-        scene.rootNode.addChildNode(sphereNode)
-        
-        // Camera, ...
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3Make(0, 0, 0)
-        scene.rootNode.addChildNode(cameraNode)
-        
-        return sphere
+        return sceneView
     }()
     
-    open var colors = [UIColor]() {
-        didSet {
-//            view.gradientLayer.colors = colors.map { $0.cgColor }
-        }
-    }
+    lazy var layerView: GradientLayerView = GradientLayerView(frame: self.bounds)
     
+    open var colors = [UIColor]()
     open var locations: [CGFloat]?
+    open var scale: CGFloat = 2
+    
+    open func configure() {
+        layerView.frame.size.height = self.frame.height * scale
+        layerView._layer.instanceSize = self.frame.size
+        gradientView.locations = locations as [NSNumber]?
+        gradientView.colors = colors.map { $0.cgColor }
+        sceneView.image = UIImage(from: layerView)
+    }
     
     /**
      Starts listening to motion updates.
      */
     open func startUpdates() {
-        let view = LayerView<ReplicatorLayer<CAGradientLayer>>(frame: self.bounds)
-        view.frame.size.height = 200 * 2
-        view._layer.instanceSize.height = 200
-        view._layer.instanceLayer.colors = colors.map { $0.cgColor }
-        view._layer.instanceLayer.locations = locations as [NSNumber]?
-        let image = UIImage(from: view)
-        sphere.firstMaterial!.diffuse.contents = image
-        
         Gyro.observe { [weak self] roll, pitch, yaw in
             guard let `self` = self else { return }
             
-            SCNTransaction.animationDuration = 0
-            self.cameraNode.eulerAngles.x = Float(pitch - .pi/2)
-//            self.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360
+//            SCNTransaction.animationDuration = 0
+            self.sceneView.cameraNode.eulerAngles.x = Float(pitch - .pi/2)
+//            self.sceneView.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360
         }
     }
     
