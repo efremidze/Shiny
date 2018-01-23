@@ -117,13 +117,13 @@
 		71463DB71FEBB00300BCC7B9 /* Shiny */ = {
 			isa = PBXGroup;
 			children = (
-				71C96DB41FEBB7CF00C9CC58 /* Extensions.swift */,
-				71C96DB61FEBB7CF00C9CC58 /* Gradient.swift */,
+				71463DB91FEBB00300BCC7B9 /* Info.plist */,
+				71463DB81FEBB00300BCC7B9 /* Shiny.h */,
+				71C96DB71FEBB7CF00C9CC58 /* Shiny.swift */,
 				716B1866200FCE9500F09032 /* Scene.swift */,
 				71C96DB51FEBB7CF00C9CC58 /* Gyro.swift */,
-				71C96DB71FEBB7CF00C9CC58 /* Shiny.swift */,
-				71463DB81FEBB00300BCC7B9 /* Shiny.h */,
-				71463DB91FEBB00300BCC7B9 /* Info.plist */,
+				71C96DB61FEBB7CF00C9CC58 /* Gradient.swift */,
+				71C96DB41FEBB7CF00C9CC58 /* Extensions.swift */,
 			);
 			name = Shiny;
 			path = Sources;
