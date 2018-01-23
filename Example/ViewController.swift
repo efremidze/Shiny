@@ -23,10 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var shinyView: ShinyView! {
         didSet {
             shinyView.colors = [UIColor.gray, UIColor.gray, UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray, UIColor.gray].map { $0.withAlphaComponent(0.9) }
-//            shinyView.colors = [UIColor.gray, UIColor.gray, UIColor.red, UIColor.green, UIColor.blue, UIColor.gray, UIColor.gray].map { $0.withAlphaComponent(0.5) }
-//            shinyView.colors = [UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray].map { $0.withAlphaComponent(0.5) }
-//            shinyView.locations = [0, 0.3, 0.4, 0.5, 0.6, 0.7, 1]
-//            shinyView.locations = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 1]
+            shinyView.configure()
             shinyView.startUpdates()
             shinyView.layer.cornerRadius = 20
             shinyView.layer.masksToBounds = true

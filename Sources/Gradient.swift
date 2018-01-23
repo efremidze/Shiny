@@ -9,41 +9,37 @@
 import UIKit
 
 class ReplicatorLayer<T: CALayer>: CALayer {
-    
     lazy var horizontalLayer: CAReplicatorLayer = {
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.frame.size = size
-        
         replicatorLayer.masksToBounds = true
-        
-        replicatorLayer.instanceCount = Int(ceil(size.width / instanceSize.width))
-        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(instanceSize.width, 0, 0)
         return replicatorLayer
     }()
-    
     lazy var verticalLayer: CAReplicatorLayer = {
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.frame.size = size
-        
         replicatorLayer.masksToBounds = true
-        
-        replicatorLayer.instanceCount = Int(ceil(size.height / instanceSize.height))
-        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(0, instanceSize.height, 0)
         return replicatorLayer
     }()
-    
     lazy var instanceLayer: T = {
         let layer = T()
-        layer.frame.size = instanceSize
-//        layer.backgroundColor = UIColor.clear.cgColor
+        layer.backgroundColor = UIColor.clear.cgColor
         self.insertSublayer(verticalLayer, at: 0)
         verticalLayer.addSublayer(horizontalLayer)
         horizontalLayer.addSublayer(layer)
         return layer
     }()
-    
-    lazy var instanceSize: CGSize = size
-    
+    var instanceSize: CGSize?
+    override func layoutSublayers() {
+        super.layoutSublayers()
+        
+        guard let instanceSize = instanceSize else { return }
+        horizontalLayer.instanceCount = Int(ceil(size.width / instanceSize.width))
+        horizontalLayer.instanceTransform = CATransform3DMakeTranslation(instanceSize.width, 0, 0)
+        verticalLayer.instanceCount = Int(ceil(size.height / instanceSize.height))
+        verticalLayer.instanceTransform = CATransform3DMakeTranslation(0, instanceSize.height, 0)
+        instanceLayer.frame.size = instanceSize
+    }
 }
 
 class RadialGradientLayer: CALayer {
@@ -66,11 +62,19 @@ class LayerView<T: CALayer>: UIView {
     }
 }
 
-extension CALayer {
-    var radius: CGFloat {
-        return sqrt(pow(bounds.width / 2, 2) + pow(bounds.height / 2, 2))
+protocol GradientLayerProtocol: class {
+    associatedtype T: CALayer
+    var layerView: LayerView<ReplicatorLayer<T>> { get set }
+    var gradientView: T { get }
+//    var instanceSize: CGSize { get set }
+}
+
+extension GradientLayerProtocol {
+    var gradientView: T {
+        return layerView._layer.instanceLayer
     }
-    var size: CGSize {
-        return frame.size
-    }
+//    var instanceSize: CGSize {
+//        get { return layerView._layer.instanceSize }
+//        set { layerView._layer.instanceSize = newValue }
+//    }
 }
