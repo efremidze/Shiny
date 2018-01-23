@@ -27,7 +27,7 @@ open class ShinyView: UIView {
      Starts listening to motion updates.
      */
     open func startUpdates() {
-        sceneView.image = GradientSnapshotter.shared.snapshot(frame: self.bounds, colors: colors, locations: locations, scale: scale)
+        sceneView.image = GradientSnapshotter.snapshot(frame: self.bounds, colors: colors, locations: locations, scale: scale)
         Gyro.observe { [weak self] roll, pitch, yaw in
             guard let `self` = self else { return }
             
