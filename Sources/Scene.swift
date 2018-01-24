@@ -9,8 +9,8 @@
 import Foundation
 import SceneKit
 
-class SceneView: SCNView {
-    lazy var sphere: SCNSphere = {
+open class SceneView: SCNView {
+    open lazy var sphere: SCNSphere = {
         self.scene = SCNScene()
         
         let sphere = SCNSphere(radius: 5) // default
@@ -25,8 +25,8 @@ class SceneView: SCNView {
         
         return sphere
     }()
-    let cameraNode = SCNNode()
-    var image: UIImage? {
+    open let cameraNode = SCNNode()
+    open var image: UIImage? {
         get { return sphere.firstMaterial!.diffuse.contents as? UIImage }
         set { sphere.firstMaterial!.diffuse.contents = newValue }
     }

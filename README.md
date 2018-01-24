@@ -31,8 +31,7 @@ Adding `ShinyView` programmatically (supports storyboard/xib too):
 import Shiny
 
 let shinyView = ShinyView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
-shinyView.colors = [UIColor.red, UIColor.green, UIColor.blue, UIColor.gray]
-shinyView.locations = [0, 0.1, 0.2, 0.3, 1]
+shinyView.colors = [UIColor.gray, UIColor.gray, UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray, UIColor.gray]
 shinyView.startUpdates() // necessary
 view.addSubview(shinyView)
 ```
@@ -46,9 +45,7 @@ The `ShinyView` exposes several properties to customize the radial gradient used
 ```swift
 var colors: [UIColor] // The color of each gradient stop.
 var locations: [CGFloat]? // The location of each gradient stop. The default is `nil`.
-var spread: CGFloat // The distance between colors on the gradient. The default is `0.8`.
-var padding: CGFloat // The padding on the edges of the gradient. The default is `0.1`.
-var sensitivity: CGFloat // The sensitivity of the gyroscopic motion. The default is `0.2`.
+var scale: CGFloat // The scale factor of the gradient. The default is `2.0`.
 ```
 
 You can start/stop observing motion updates:

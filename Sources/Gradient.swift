@@ -62,24 +62,7 @@ class LayerView<T: CALayer>: UIView {
     }
 }
 
-protocol GradientLayerProtocol: class {
-    associatedtype T: CALayer
-    var layerView: LayerView<ReplicatorLayer<T>> { get set }
-    var gradientView: T { get }
-//    var instanceSize: CGSize { get set }
-}
-
-extension GradientLayerProtocol {
-    var gradientView: T {
-        return layerView._layer.instanceLayer
-    }
-//    var instanceSize: CGSize {
-//        get { return layerView._layer.instanceSize }
-//        set { layerView._layer.instanceSize = newValue }
-//    }
-}
-
-class GradientSnapshotter {
+struct GradientSnapshotter {
     typealias GradientLayerView = LayerView<ReplicatorLayer<CAGradientLayer>>
     static func snapshot(frame: CGRect, colors: [UIColor], locations: [CGFloat]?, scale: CGFloat) -> UIImage {
         let layerView = GradientLayerView(frame: frame)
@@ -90,3 +73,20 @@ class GradientSnapshotter {
         return UIImage(from: layerView)
     }
 }
+
+//protocol GradientLayerProtocol: class {
+//    associatedtype T: CALayer
+//    var layerView: LayerView<ReplicatorLayer<T>> { get set }
+//    var gradientView: T { get }
+//    var instanceSize: CGSize { get set }
+//}
+//
+//extension GradientLayerProtocol {
+//    var gradientView: T {
+//        return layerView._layer.instanceLayer
+//    }
+//    var instanceSize: CGSize {
+//        get { return layerView._layer.instanceSize }
+//        set { layerView._layer.instanceSize = newValue }
+//    }
+//}
