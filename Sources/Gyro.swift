@@ -32,3 +32,12 @@ class GyroManager: CMMotionManager {
         }
     }
 }
+
+struct Axis: OptionSet {
+    let rawValue: Int
+    
+    static let vertical = Axis(rawValue: 1 << 0)
+    static let horizontal = Axis(rawValue: 1 << 1)
+    
+    static let all: Axis = [.vertical, .horizontal]
+}

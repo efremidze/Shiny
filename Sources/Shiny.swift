@@ -35,6 +35,11 @@ open class ShinyView: UIView {
     open var scale: CGFloat = 2
     
     /**
+     The axis of the gradient. Defaults to vertical.
+     */
+    var axis: Axis = .vertical
+    
+    /**
      Starts listening to motion updates.
      */
     open func startUpdates() {
@@ -43,7 +48,11 @@ open class ShinyView: UIView {
             guard let `self` = self else { return }
             
 //            SCNTransaction.animationDuration = 0
-            self.sceneView.cameraNode.eulerAngles.x = Float(pitch - .pi/2)
+            if self.axis.contains(.vertical) {
+                self.sceneView.cameraNode.eulerAngles.x = Float(pitch - .pi / 2)
+            } else if self.axis.contains(.horizontal) {
+                self.sceneView.cameraNode.eulerAngles.y = Float(roll)
+            }
 //            self.sceneView.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360° Support
         }
     }
