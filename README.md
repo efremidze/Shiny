@@ -31,7 +31,7 @@ Adding `ShinyView` programmatically (supports storyboard/xib too):
 import Shiny
 
 let shinyView = ShinyView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
-shinyView.colors = [UIColor.gray, UIColor.gray, UIColor.red, UIColor.orange, UIColor.green, UIColor.blue, UIColor.purple, UIColor.pink, UIColor.gray, UIColor.gray]
+shinyView.colors = [.gray, .red, .green, .blue, .gray]
 shinyView.startUpdates() // necessary
 view.addSubview(shinyView)
 ```
