@@ -12,15 +12,26 @@ import SceneKit
 
 open class ShinyView: UIView {
     
-    lazy var sceneView: SceneView = {
+    open lazy var sceneView: SceneView = {
         let sceneView = SceneView(frame: self.bounds.insetBy(dx: -500, dy: -500))
 //        self.addSubview(sceneView) // testing
         self.insertSubview(sceneView, at: 0)
         return sceneView
     }()
     
+    /**
+     The array of UIColor objects defining the color of each gradient stop.
+     */
     open var colors = [UIColor]()
+    
+    /**
+     The array of CGFloat objects defining the location of each gradient stop as a value in the range [0,1]. The values must be monotonically increasing. If a nil array is given, the stops are assumed to spread uniformly across the [0,1] range. Defaults to nil.
+     */
     open var locations: [CGFloat]?
+    
+    /**
+     The scale factor of the gradient. Defaults to 2.
+     */
     open var scale: CGFloat = 2
     
     /**
@@ -33,7 +44,7 @@ open class ShinyView: UIView {
             
 //            SCNTransaction.animationDuration = 0
             self.sceneView.cameraNode.eulerAngles.x = Float(pitch - .pi/2)
-//            self.sceneView.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360
+//            self.sceneView.cameraNode.eulerAngles = SCNVector3(x: Float(pitch - .pi/2), y: Float(roll), z: Float(yaw)) // 360° Support
         }
     }
     

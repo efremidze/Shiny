@@ -32,8 +32,8 @@ extension CALayer {
     }
 }
 
-extension UIView {
-    var snapshot: UIImage {
-        return UIImage(from: self)
-    }
-}
+//extension UIView {
+//    var snapshot: UIImage {
+//        return UIImage(from: self)
+//    }
+//}
