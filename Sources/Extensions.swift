@@ -9,7 +9,7 @@
 import UIKit
 
 infix operator %: MultiplicationPrecedence
-func % (left: CGFloat, right: CGFloat) -> CGFloat {
+func % <T: FloatingPoint>(left: T, right: T) -> T {
     let v = left.truncatingRemainder(dividingBy: right)
     return v >= 0 ? v : v + right
 }
