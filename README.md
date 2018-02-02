@@ -38,6 +38,11 @@ view.addSubview(shinyView)
 
 You must call `startUpdates()` for the instance to observe motion changes. Calling `stopUpdates()` on the instance will stop motion updates.
 
+```swift
+func startUpdates() // Starts listening to motion updates.
+func stopUpdates() // Stops listening to motion updates.
+```
+
 ### Customization
 
 The `ShinyView` exposes several properties to customize the radial gradient used to create the shiny effect:
@@ -46,13 +51,6 @@ The `ShinyView` exposes several properties to customize the radial gradient used
 var colors: [UIColor] // The color of each gradient stop.
 var locations: [CGFloat]? // The location of each gradient stop. The default is `nil`.
 var scale: CGFloat // The scale factor of the gradient. The default is `2.0`.
-```
-
-You can start/stop observing motion updates:
-
-```swift
-func startUpdates() // Starts listening to motion updates.
-func stopUpdates() // Stops listening to motion updates.
 ```
 
 ## Installation
