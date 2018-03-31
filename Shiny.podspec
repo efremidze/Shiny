@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Shiny'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'Iridescent Effect View (inspired by Apple Pay Cash)'
   s.homepage         = 'https://github.com/efremidze/Shiny'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
