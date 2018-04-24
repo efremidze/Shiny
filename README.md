@@ -70,6 +70,10 @@ To install with [Carthage](https://github.com/Carthage/Carthage), simply add thi
 github "efremidze/Shiny"
 ```
 
+## Mentions
+
+- [iOS Dev Weekly 332](http://iosdevweekly.com/issues/332#start)
+
 ## Communication
 
 - If you **found a bug**, open an issue.
