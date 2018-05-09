@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode9
+script:
+- xcodebuild clean -project Shiny.xcodeproj -scheme Shiny -destination "platform=iOS Simulator,name=iPhone 6,OS=11.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+- xcodebuild clean -project Shiny.xcodeproj -scheme Example -destination "platform=iOS Simulator,name=iPhone 6,OS=11.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
