@@ -1,5 +1,6 @@
 # Shiny
 
+[![Build Status](https://travis-ci.org/efremidze/Shiny.svg?branch=master)](https://travis-ci.org/efremidze/Shiny)
 [![Language](https://img.shields.io/badge/Swift-4-orange.svg?style=flat)](https://swift.org)
 [![Version](https://img.shields.io/cocoapods/v/Shiny.svg?style=flat)](http://cocoapods.org/pods/Shiny)
 [![License](https://img.shields.io/cocoapods/l/Shiny.svg?style=flat)](http://cocoapods.org/pods/Shiny)
