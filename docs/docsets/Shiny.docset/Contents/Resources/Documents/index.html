@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shiny  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Shiny  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Shiny Docs</a> (45% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Shiny Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Shiny  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/SceneView.html">SceneView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ShinyView.html">ShinyView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='shiny' class='heading'>Shiny</h1>
+
+<p><a href="https://travis-ci.org/efremidze/Shiny"><img src="https://travis-ci.org/efremidze/Shiny.svg?branch=master" alt="Build Status"></a>
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat" alt="Language"></a>
+<a href="http://cocoapods.org/pods/Shiny"><img src="https://img.shields.io/cocoapods/v/Shiny.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/Shiny"><img src="https://img.shields.io/cocoapods/l/Shiny.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/Shiny"><img src="https://img.shields.io/cocoapods/p/Shiny.svg?style=flat" alt="Platform"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
+
+<p><strong>Shiny</strong> is an iOS library that generates an iridescent effect view matched to the gyroscope, similar to the Apple Pay Cash card in the Wallet app.</p>
+
+<p><img src="Images/applepay.png" width="318" alt="Apple Pay" />
+<img src="https://thumbs.gfycat.com/NewGrotesqueKitten-size_restricted.gif" width="320"></p>
+
+<p><a href="https://gfycat.com/gifs/detail/NewGrotesqueKitten">Demo Video</a></p>
+<pre class="highlight plaintext"><code>$ pod try Shiny
+</code></pre>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 9.0+</li>
+<li>Xcode 9.0+</li>
+<li>Swift 4</li>
+</ul>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Adding <code><a href="Classes/ShinyView.html">ShinyView</a></code> programmatically (supports storyboard/xib too):</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Shiny</span>
+
+<span class="k">let</span> <span class="nv">shinyView</span> <span class="o">=</span> <span class="kt">ShinyView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">200</span><span class="p">))</span>
+<span class="n">shinyView</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="o">.</span><span class="n">green</span><span class="p">,</span> <span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="o">.</span><span class="n">gray</span><span class="p">]</span>
+<span class="n">shinyView</span><span class="o">.</span><span class="nf">startUpdates</span><span class="p">()</span> <span class="c1">// necessary</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">shinyView</span><span class="p">)</span>
+</code></pre>
+
+<p>You must call <code>startUpdates()</code> for the instance to observe motion changes. Calling <code>stopUpdates()</code> on the instance will stop motion updates.</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">startUpdates</span><span class="p">()</span> <span class="c1">// Starts listening to motion updates.</span>
+<span class="kd">func</span> <span class="nf">stopUpdates</span><span class="p">()</span> <span class="c1">// Stops listening to motion updates.</span>
+</code></pre>
+<h3 id='customization' class='heading'>Customization</h3>
+
+<p>The <code><a href="Classes/ShinyView.html">ShinyView</a></code> exposes several properties to customize the radial gradient used to create the shiny effect:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">colors</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIColor</span><span class="p">]</span> <span class="c1">// The color of each gradient stop.</span>
+<span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">]?</span> <span class="c1">// The location of each gradient stop. The default is `nil`.</span>
+<span class="k">var</span> <span class="nv">scale</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="c1">// The scale factor of the gradient. The default is `2.0`.</span>
+</code></pre>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>Shiny is available via CocoaPods and Carthage.</p>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>To install with <a href="http://cocoapods.org/">CocoaPods</a>, simply add this in your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
+<span class="n">pod</span> <span class="s2">"Shiny"</span>
+</code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p>To install with <a href="https://github.com/Carthage/Carthage">Carthage</a>, simply add this in your <code>Cartfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">github</span> <span class="s2">"efremidze/Shiny"</span>
+</code></pre>
+<h2 id='mentions' class='heading'>Mentions</h2>
+
+<ul>
+<li><a href="http://iosdevweekly.com/issues/332#start">iOS Dev Weekly 332</a></li>
+</ul>
+<h2 id='communication' class='heading'>Communication</h2>
+
+<ul>
+<li>If you <strong>found a bug</strong>, open an issue.</li>
+<li>If you <strong>have a feature request</strong>, open an issue.</li>
+<li>If you <strong>want to contribute</strong>, submit a pull request.</li>
+</ul>
+<h2 id='apps-using-em-shiny-em' class='heading'>Apps Using <em>Shiny</em></h2>
+
+<p>Feel free to submit a PR if you’re using this library in your apps.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>Shiny is available under the MIT license. See the LICENSE file for more info.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/efremidze/Shiny" target="_blank" rel="external">efremidze</a>. All rights reserved. (Last updated: 2018-05-17)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

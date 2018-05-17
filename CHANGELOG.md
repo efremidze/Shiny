@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.1.2](https://github.com/efremidze/Shiny/releases/tag/1.1.2)
+Released on 2018-04-17
+
+- Added documentation
+
 ## [Version 1.1.1](https://github.com/efremidze/Shiny/releases/tag/1.1.1)
 Released on 2018-03-30
 
