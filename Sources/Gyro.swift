@@ -10,10 +10,9 @@ import CoreMotion
 
 let Gyro = GyroManager.shared
 
-class GyroManager: CMMotionManager {
-    static let shared = GyroManager()
-    let queue = OperationQueue()
-    func observe(_ observer: @escaping (_ roll: Double, _ pitch: Double, _ yaw: Double) -> Void) {
+open class GyroManager: CMMotionManager {
+    open static let shared = GyroManager()
+    open func observe(with queue: OperationQueue = .background, _ observer: @escaping (_ roll: Double, _ pitch: Double, _ yaw: Double) -> Void) {
         guard isDeviceMotionAvailable else { return }
         deviceMotionUpdateInterval = 1 / 60
         startDeviceMotionUpdates(to: queue) { data, error in
@@ -26,18 +25,22 @@ class GyroManager: CMMotionManager {
                     pitch = -(.pi + pitch)
                 }
             }
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 observer(data.attitude.roll, pitch, data.attitude.yaw)
             }
         }
     }
 }
 
-struct Axis: OptionSet {
-    let rawValue: Int
+public struct Axis: OptionSet {
+    public let rawValue: Int
     
-    static let vertical = Axis(rawValue: 1 << 0)
-    static let horizontal = Axis(rawValue: 1 << 1)
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
     
-    static let all: Axis = [.vertical, .horizontal]
+    public static let vertical = Axis(rawValue: 1 << 0)
+    public static let horizontal = Axis(rawValue: 1 << 1)
+    
+    public static let all: Axis = [.vertical, .horizontal]
 }

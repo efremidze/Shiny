@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.1.3](https://github.com/efremidze/Shiny/releases/tag/1.1.3)
+Released on 2018-07-07
+
+- Updated Access Control
+
 ## [Version 1.1.2](https://github.com/efremidze/Shiny/releases/tag/1.1.2)
 Released on 2018-04-17
 

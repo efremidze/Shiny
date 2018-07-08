@@ -62,9 +62,9 @@ class LayerView<T: CALayer>: UIView {
     }
 }
 
-struct GradientSnapshotter {
+public struct GradientSnapshotter {
     typealias GradientLayerView = LayerView<ReplicatorLayer<CAGradientLayer>>
-    static func snapshot(frame: CGRect, colors: [UIColor], locations: [CGFloat]?, scale: CGFloat) -> UIImage {
+    public static func snapshot(frame: CGRect, colors: [UIColor], locations: [CGFloat]?, scale: CGFloat) -> UIImage {
         let layerView = GradientLayerView(frame: frame)
         layerView.frame.size.height = frame.height * scale
         layerView._layer.instanceSize = frame.size

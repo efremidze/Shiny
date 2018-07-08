@@ -37,7 +37,7 @@ open class ShinyView: UIView {
     /**
      The axis of the gradient. Defaults to vertical.
      */
-    var axis: Axis = .vertical
+    open var axis: Axis = .vertical
     
     /**
      Starts listening to motion updates.

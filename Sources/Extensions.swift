@@ -32,6 +32,10 @@ extension CALayer {
     }
 }
 
+public extension OperationQueue {
+    static let background = OperationQueue()
+}
+
 //extension UIView {
 //    var snapshot: UIImage {
 //        return UIImage(from: self)
