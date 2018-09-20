@@ -25,7 +25,7 @@ open class SceneView: SCNView {
         
         return sphere
     }()
-    open let cameraNode = SCNNode()
+    public let cameraNode = SCNNode()
     open var image: UIImage? {
         get { return sphere.firstMaterial!.diffuse.contents as? UIImage }
         set { sphere.firstMaterial!.diffuse.contents = newValue }
