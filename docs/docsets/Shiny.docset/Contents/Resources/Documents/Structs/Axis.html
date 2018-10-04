@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ShinyView Class Reference</title>
+    <title>Axis Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/ShinyView" class="dashAnchor"></a>
-    <a title="ShinyView Class Reference"></a>
+    <a name="//apple_ref/swift/Struct/Axis" class="dashAnchor"></a>
+    <a title="Axis Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Shiny Docs</a> (33% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Shiny Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ShinyView Class Reference
+        Axis Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -65,10 +65,10 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ShinyView</h1>
+            <h1>Axis</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">ShinyView</span> <span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Axis</span> <span class="p">:</span> <span class="kt">OptionSet</span></code></pre>
 
                 </div>
               </div>
@@ -81,9 +81,61 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5Shiny0A4ViewC05sceneB0AA05SceneB0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/sceneView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Shiny0A4ViewC05sceneB0AA05SceneB0Cvp">sceneView</a>
+                    <a name="/s:SY8rawValue03RawB0Qzvp"></a>
+                    <a name="//apple_ref/swift/Property/rawValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SY8rawValue03RawB0Qzvp">rawValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">rawValue</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s9OptionSetP8rawValuex03RawD0Qz_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(rawValue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s9OptionSetP8rawValuex03RawD0Qz_tcfc">init(rawValue:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:5Shiny4AxisV8verticalACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/vertical" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Shiny4AxisV8verticalACvpZ">vertical</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -98,7 +150,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">sceneView</span><span class="p">:</span> <span class="kt"><a href="../Classes/SceneView.html">SceneView</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">vertical</span><span class="p">:</span> <span class="kt">Axis</span></code></pre>
 
                         </div>
                       </div>
@@ -108,9 +160,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5Shiny0A4ViewC6colorsSaySo7UIColorCGvp"></a>
-                    <a name="//apple_ref/swift/Property/colors" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Shiny0A4ViewC6colorsSaySo7UIColorCGvp">colors</a>
+                    <a name="/s:5Shiny4AxisV10horizontalACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/horizontal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Shiny4AxisV10horizontalACvpZ">horizontal</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -118,14 +170,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The array of UIColor objects defining the color of each gradient stop.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">colors</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIColor</span><span class="p">]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">horizontal</span><span class="p">:</span> <span class="kt">Axis</span></code></pre>
 
                         </div>
                       </div>
@@ -135,9 +187,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:5Shiny0A4ViewC9locationsSay12CoreGraphics7CGFloatVGSgvp"></a>
-                    <a name="//apple_ref/swift/Property/locations" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Shiny0A4ViewC9locationsSay12CoreGraphics7CGFloatVGSgvp">locations</a>
+                    <a name="/s:5Shiny4AxisV3allACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/all" class="dashAnchor"></a>
+                    <a class="token" href="#/s:5Shiny4AxisV3allACvpZ">all</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -145,122 +197,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The array of CGFloat objects defining the location of each gradient stop as a value in the range [0,1]. The values must be monotonically increasing. If a nil array is given, the stops are assumed to spread uniformly across the [0,1] range. Defaults to nil.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">CGFloat</span><span class="p">]?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Shiny0A4ViewC5scale12CoreGraphics7CGFloatVvp"></a>
-                    <a name="//apple_ref/swift/Property/scale" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Shiny0A4ViewC5scale12CoreGraphics7CGFloatVvp">scale</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The scale factor of the gradient. Defaults to 2.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">scale</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Shiny0A4ViewC4axisAA4AxisVvp"></a>
-                    <a name="//apple_ref/swift/Property/axis" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Shiny0A4ViewC4axisAA4AxisVvp">axis</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The axis of the gradient. Defaults to vertical.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">axis</span><span class="p">:</span> <span class="kt"><a href="../Structs/Axis.html">Axis</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Shiny0A4ViewC12startUpdatesyyF"></a>
-                    <a name="//apple_ref/swift/Method/startUpdates()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Shiny0A4ViewC12startUpdatesyyF">startUpdates()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Starts listening to motion updates.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">startUpdates</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:5Shiny0A4ViewC11stopUpdatesyyF"></a>
-                    <a name="//apple_ref/swift/Method/stopUpdates()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:5Shiny0A4ViewC11stopUpdatesyyF">stopUpdates()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Stops listening to motion updates.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">stopUpdates</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">all</span><span class="p">:</span> <span class="kt">Axis</span></code></pre>
 
                         </div>
                       </div>
