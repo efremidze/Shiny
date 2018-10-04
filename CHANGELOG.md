@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 1.2.0](https://github.com/efremidze/Shiny/releases/tag/1.2.0)
+Released on 2018-10-03
+
+- Swift 4.2 Support
+
 ## [Version 1.1.3](https://github.com/efremidze/Shiny/releases/tag/1.1.3)
 Released on 2018-07-07
 

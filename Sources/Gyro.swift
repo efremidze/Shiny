@@ -11,7 +11,7 @@ import CoreMotion
 let Gyro = GyroManager.shared
 
 open class GyroManager: CMMotionManager {
-    open static let shared = GyroManager()
+    public static let shared = GyroManager()
     open func observe(with queue: OperationQueue = .background, _ observer: @escaping (_ roll: Double, _ pitch: Double, _ yaw: Double) -> Void) {
         guard isDeviceMotionAvailable else { return }
         deviceMotionUpdateInterval = 1 / 60

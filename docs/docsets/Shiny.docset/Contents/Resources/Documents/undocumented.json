@@ -1,0 +1,47 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Scene.swift",
+      "line": 12,
+      "symbol": "SceneView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Scene.swift",
+      "line": 13,
+      "symbol": "SceneView.sphere",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Scene.swift",
+      "line": 28,
+      "symbol": "SceneView.cameraNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Scene.swift",
+      "line": 29,
+      "symbol": "SceneView.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Shiny.swift",
+      "line": 13,
+      "symbol": "ShinyView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Shiny.swift",
+      "line": 15,
+      "symbol": "ShinyView.sceneView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/home/Documents/Shiny"
+}

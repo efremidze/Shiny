@@ -20,7 +20,7 @@ extension UIView {
 }
 
 extension UIInterpolatingMotionEffect {
-    convenience init(keyPath: String, type: UIInterpolatingMotionEffectType, span: Int) {
+    convenience init(keyPath: String, type: UIInterpolatingMotionEffect.EffectType, span: Int) {
         self.init(keyPath: keyPath, type: type)
         self.minimumRelativeValue = -span
         self.maximumRelativeValue = span
