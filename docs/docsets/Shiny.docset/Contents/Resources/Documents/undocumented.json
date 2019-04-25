@@ -1,6 +1,76 @@
 {
   "warnings": [
     {
+      "file": "/Users/home/Documents/Shiny/Sources/Extensions.swift",
+      "line": 36,
+      "symbol": "OperationQueue.background",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gradient.swift",
+      "line": 65,
+      "symbol": "GradientSnapshotter",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gradient.swift",
+      "line": 67,
+      "symbol": "GradientSnapshotter.snapshot(frame:colors:locations:scale:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gyro.swift",
+      "line": 13,
+      "symbol": "GyroManager",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gyro.swift",
+      "line": 14,
+      "symbol": "GyroManager.shared",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gyro.swift",
+      "line": 15,
+      "symbol": "GyroManager.observe(with:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gyro.swift",
+      "line": 35,
+      "symbol": "Axis",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gyro.swift",
+      "line": 42,
+      "symbol": "Axis.vertical",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gyro.swift",
+      "line": 43,
+      "symbol": "Axis.horizontal",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/home/Documents/Shiny/Sources/Gyro.swift",
+      "line": 45,
+      "symbol": "Axis.all",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/home/Documents/Shiny/Sources/Scene.swift",
       "line": 12,
       "symbol": "SceneView",
