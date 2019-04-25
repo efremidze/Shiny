@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.0.0](https://github.com/efremidze/Shiny/releases/tag/2.0.0)
+Released on 2019-04-24
+
+- Swift 5.0 Support
+
 ## [Version 1.2.0](https://github.com/efremidze/Shiny/releases/tag/1.2.0)
 Released on 2018-10-03
 
