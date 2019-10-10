@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.0.1](https://github.com/efremidze/Shiny/releases/tag/2.0.1)
+Released on 2019-10-10
+
+- SPM Support
+
 ## [Version 2.0.0](https://github.com/efremidze/Shiny/releases/tag/2.0.0)
 Released on 2019-04-24
 
