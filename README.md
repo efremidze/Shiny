@@ -12,8 +12,6 @@
 <img src="https://raw.githubusercontent.com/efremidze/Shiny/master/Images/applepay.png" width="318" alt="Apple Pay" />
 <img src="https://thumbs.gfycat.com/NewGrotesqueKitten-size_restricted.gif" width="320">
 
-[Demo Video](https://gfycat.com/gifs/detail/NewGrotesqueKitten)
-
 ```
 $ pod try Shiny
 ```
