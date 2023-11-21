@@ -13,8 +13,7 @@ import SceneKit
 open class ShinyView: UIView {
     
     open lazy var sceneView: SceneView = {
-        let sceneView = SceneView(frame: self.bounds.insetBy(dx: -500, dy: -500))
-//        self.addSubview(sceneView) // testing
+        let sceneView = SceneView()
         self.insertSubview(sceneView, at: 0)
         return sceneView
     }()
@@ -38,6 +37,11 @@ open class ShinyView: UIView {
      The axis of the gradient. Defaults to vertical.
      */
     open var axis: Axis = .vertical
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        sceneView.frame = self.bounds
+    }
     
     /**
      Starts listening to motion updates.
