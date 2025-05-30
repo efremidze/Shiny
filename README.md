@@ -1,11 +1,11 @@
 # Shiny
 
-[![Build Status](https://travis-ci.org/efremidze/Shiny.svg?branch=master)](https://travis-ci.org/efremidze/Shiny)
-[![Language](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://swift.org)
-[![Version](https://img.shields.io/cocoapods/v/Shiny.svg?style=flat)](http://cocoapods.org/pods/Shiny)
-[![License](https://img.shields.io/cocoapods/l/Shiny.svg?style=flat)](http://cocoapods.org/pods/Shiny)
-[![Platform](https://img.shields.io/cocoapods/p/Shiny.svg?style=flat)](http://cocoapods.org/pods/Shiny)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CI](https://github.com/efremidze/Shiny/actions/workflows/ci.yml/badge.svg)](https://github.com/efremidze/Shiny/actions/workflows/ci.yml)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Shiny.svg)](https://cocoapods.org/pods/Shiny)
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
+[![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
+[![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
+[![License](https://img.shields.io/github/license/efremidze/Shiny.svg)](https://github.com/efremidze/Shiny/blob/master/LICENSE)
 
 **Shiny** is an iOS library that generates an iridescent effect view matched to the gyroscope, similar to the Apple Pay Cash card in the Wallet app.
 
