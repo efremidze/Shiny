@@ -19,7 +19,6 @@ $ pod try Shiny
 ## Requirements
 
 - iOS 9.0+
-- Xcode 9.0+
 - Swift 5 (Shiny 2.x), Swift 4 (Shiny 1.x)
 
 ## Usage
